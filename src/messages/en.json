@@ -1,0 +1,364 @@
+{
+  "common": {
+    "skipToContent": "Skip to main content",
+    "book": "Book Now",
+    "contact": "Contact",
+    "learnMore": "Learn More",
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "book": "Book",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "tagline": "Professional cleaning for your home and business. Trustworthy, flexible, easy — since day one.",
+    "quickLinks": "Quick links",
+    "ourServices": "Our services",
+    "contactUs": "Contact us",
+    "allRightsReserved": "All rights reserved.",
+    "rutBadge": "RUT 50% tax deduction",
+    "guaranteeBadge": "7-day guarantee"
+  },
+  "trust": {
+    "trustworthy": "Trustworthy",
+    "trustworthyDesc": "You can feel secure with our staff and the quality of our services. Our meticulously selected and trained employees are as committed as they are skilled.",
+    "flexible": "Flexible",
+    "flexibleDesc": "We tailor our services to you. With our extensive range of services, we shape every detail to meet your needs. The outcome will always be as you wish.",
+    "easy": "Easy",
+    "easyDesc": "Being a customer with us is effortless. Our innovative solutions and dedication to accessibility ensure a frictionless and smooth collaboration.",
+    "rutInfo": "RUT tax deduction applies — save 50% on eligible services.",
+    "guarantee": "7-day satisfaction guarantee on move-out cleaning."
+  },
+  "home": {
+    "title": "Home Cleaning Service",
+    "subtitle": "Professional cleaning solutions for your home and business. Trustworthy, flexible, easy.",
+    "hero": {
+      "title": "Welcome home to a freshly cleaned home.",
+      "subtitle": "Trustworthy. Flexible. Easy. Experience home cleaning as it should be.",
+      "rutBadge": "RUT 50% tax deduction",
+      "guaranteeBadge": "7-day guarantee",
+      "noPayment": "No payment required — we confirm by phone"
+    },
+    "quickBooking": {
+      "postalCodeLabel": "Postal code",
+      "postalCodePlaceholder": "123 45",
+      "serviceLabel": "Choose service",
+      "invalidPostalCode": "Enter a valid Swedish postal code (5 digits)"
+    },
+    "cta": "Get a Quote",
+    "statsCustomers": "500+",
+    "statsCustomersLabel": "Happy customers",
+    "statsYears": "30",
+    "statsYearsLabel": "Years experience",
+    "statsServices": "5",
+    "statsServicesLabel": "Professional services",
+    "servicesTitle": "How can we help you?",
+    "servicesSubtitle": "From home cleaning to office maintenance, we offer professional services tailored to your needs.",
+    "howItWorksTitle": "Book in 3 simple steps",
+    "step1Title": "Choose your service",
+    "step1Desc": "Select the cleaning service that fits your needs — from regular home cleaning to move-out or office cleaning.",
+    "step2Title": "Pick a time",
+    "step2Desc": "Choose a date and time that works for you. We're flexible and adapt to your schedule.",
+    "step3Title": "We take care of the rest",
+    "step3Desc": "We confirm your booking by phone and our professional team arrives at your door — ready to make your space shine.",
+    "trustTitle": "More than service.",
+    "testimonialTitle": "What our customers say",
+    "testimonial1Quote": "Always professional treatment from everyone. The cleaning result is superb.",
+    "testimonial1Author": "Sara",
+    "testimonial1Location": "Stockholm",
+    "testimonial2Quote": "Flexible, reliable, and easy to work with. Our office has never looked better.",
+    "testimonial2Author": "Marcus",
+    "testimonial2Location": "Gothenburg",
+    "ctaSectionTitle": "Ready for a cleaner home?",
+    "ctaSectionSubtitle": "Book your cleaning service today — or get in touch for a free quote. We're here to help.",
+    "ctaSectionPhone": "Call us",
+    "ctaSectionWhatsapp": "WhatsApp",
+    "ctaSectionEmail": "Email us"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Professional cleaning services for homes and businesses across Sweden.",
+    "homeCleaning": {
+      "name": "Regular Home Cleaning",
+      "description": "Ongoing maintenance cleaning for those who want to come home to spotless results."
+    },
+    "deepCleaning": {
+      "name": "Deep Cleaning",
+      "description": "A thorough clean that gives your home a fresh start."
+    },
+    "windowCleaning": {
+      "name": "Window Cleaning",
+      "description": "Crystal-clear windows, one-time or on a regular schedule."
+    },
+    "moveOutCleaning": {
+      "name": "Move-Out Cleaning",
+      "description": "Professional cleaning that meets inspection standards for a smoother move."
+    },
+    "officeCleaning": {
+      "name": "Office Cleaning",
+      "description": "Keep your office clean, welcoming, and always ready to impress."
+    }
+  },
+  "serviceDetail": {
+    "bookThisService": "Book this service",
+    "getQuote": "Get a free quote",
+    "whatsIncluded": "What's included",
+    "pricingHint": "Pricing",
+    "relatedServices": "Other services you might like",
+    "preparation": "How to prepare",
+    "notIncluded": "Not included",
+    "homeCleaning": {
+      "intro": "Regular home cleaning for those who want to come home to spotless results — without thinking about it. Our professional cleaners take care of everything while you focus on what matters most.",
+      "includes": [
+        "All rooms: vacuuming carpets, floors and baseboards",
+        "Spot cleaning of switches, door frames, doors and handles",
+        "Polishing mirrors",
+        "Emptying bins (combustible and compostable)",
+        "Dusting frames and lamps",
+        "Mopping and spot cleaning floors",
+        "Kitchen: wiping fridge/freezer exterior, countertops, sink, stove, oven, microwave, handles",
+        "Bathroom: cleaning bathtub/shower, sink inside and out, toilet, towel rack, floor drain"
+      ],
+      "pricing": "From 299 kr/hour (before RUT deduction)"
+    },
+    "deepCleaning": {
+      "intro": "A deep clean that gives your home a fresh start — ideal before holidays, parties, or simply for everyday luxury. We go beyond the surface to make every corner shine.",
+      "includes": [
+        "Thorough cleaning of every surface",
+        "Inside cabinets and drawers",
+        "Behind and under appliances",
+        "Baseboards, light fixtures, vents",
+        "Perfect for spring cleaning or special occasions"
+      ],
+      "pricing": "From 399 kr/hour (before RUT deduction)"
+    },
+    "windowCleaning": {
+      "intro": "Crystal-clear windows for private homes, apartments, and businesses. We offer both one-time cleaning and subscription plans. After your first session, we'll send a subscription pricing proposal tailored to your home.",
+      "includes": [
+        "Interior and exterior window glass",
+        "Window frames and sills",
+        "Spröjs and multi-pane windows (additional cost may apply)",
+        "Flexible date option available (100 kr discount)",
+        "All cleaning materials provided"
+      ],
+      "preparation": [
+        "Move bulky furniture away from windows",
+        "Take down curtains",
+        "Clear objects and flowers from windowsills",
+        "Have keys ready for any window locks"
+      ],
+      "pricing": "From 75 kr/window — get a quote for your home"
+    },
+    "moveOutCleaning": {
+      "intro": "Professional move-out cleaning that meets inspection standards for a smoother move. We know how important it is that both seller and buyer are satisfied. Our 7-day guarantee means you can feel secure — if anything needs fixing, we'll come back at no extra cost.",
+      "includesAllRooms": [
+        "Power outlets, switches, and fuse box",
+        "Doors and door frames",
+        "Radiators",
+        "Floors and baseboards",
+        "Thresholds",
+        "Wardrobes and closets"
+      ],
+      "includesBathroom": [
+        "Fixed lighting",
+        "Bathroom cabinets",
+        "Visible pipes",
+        "Mirrors",
+        "Bathtub and shower cabin",
+        "Toilet",
+        "Sink",
+        "Floor drains",
+        "Descaling tiles and clinker",
+        "Ventilation — inside and out where accessible",
+        "Washing machine and tumble dryer"
+      ],
+      "includesLaundry": [
+        "Dust walls and ceiling",
+        "Clean washing machine and detergent compartment",
+        "Clean tumble dryer and filter",
+        "Clean drying cabinet and filter",
+        "Clean laundry sink",
+        "Clean storage areas",
+        "Clean floor drain and ventilation",
+        "Clean floor, doors and handles"
+      ],
+      "includesKitchen": [
+        "Fixed lighting",
+        "Stove, oven, trays and grates",
+        "Microwave",
+        "Fridge and freezer",
+        "Cabinets, drawers and doors",
+        "Countertops",
+        "Kitchen exhaust fan",
+        "Dishwasher"
+      ],
+      "includesWindows": [
+        "Window cleaning (interior)",
+        "Windowsills",
+        "Window frames"
+      ],
+      "notIncluded": [
+        "Blinds and curtains",
+        "Removal of tape, stickers, etc.",
+        "Dismantling radiators",
+        "Washing walls",
+        "Balcony, patio, conservatory, garage, and storage (quoted separately)"
+      ],
+      "preparation": [
+        "Home must be empty of belongings",
+        "Pull out appliances if cleaning behind them",
+        "Remove and replace grilles above/below fridge and freezer",
+        "Remove and replace bathtub front panel",
+        "Provide access to additional spaces (e.g. storage rooms)",
+        "Defrost the freezer"
+      ],
+      "rutExplainer": "As a private individual, you are entitled to RUT deduction on your cleaning services, including move-out cleaning. This means a 50% tax reduction that lowers your cost. We handle the RUT application automatically when you book — no extra steps for you.",
+      "includes": [
+        "Complete checklist: all rooms, bathroom, kitchen",
+        "Windows (interior)",
+        "Inside cabinets and appliances",
+        "RUT tax deduction applies",
+        "7-day satisfaction guarantee"
+      ],
+      "pricing": "From 3 500 kr for a standard apartment (before RUT)"
+    },
+    "officeCleaning": {
+      "intro": "We help keep your office clean, welcoming, and always ready to impress both clients and staff. Flexible schedules adapted to your business hours.",
+      "includes": [
+        "Desks and workstations",
+        "Common areas and meeting rooms",
+        "Restrooms",
+        "Kitchen/break room",
+        "Customizable frequency and schedule"
+      ],
+      "pricing": "Custom pricing — contact us for a tailored quote"
+    }
+  },
+  "about": {
+    "title": "About Home Cleaning Service",
+    "intro": "For nearly 30 years, we have offered first-class home services. Every day, we leverage that experience to meet, and exceed, our customers' expectations.",
+    "storyTitle": "Our story",
+    "storyP1": "What started as a small family business has grown into one of the most trusted cleaning service providers in Sweden. Our passion for cleanliness and customer care drives everything we do.",
+    "storyP2": "We believe that a clean home or office isn't a luxury — it's a foundation for well-being. That's why we go above and beyond to deliver results that make you smile when you walk through the door.",
+    "whyChooseTitle": "Why choose us?",
+    "why1Title": "Nearly 30 years of experience",
+    "why1Desc": "Decades of expertise in home and office cleaning across Sweden.",
+    "why2Title": "RUT 50% tax deduction",
+    "why2Desc": "Save 50% on eligible services. We handle the application — no extra steps for you.",
+    "why3Title": "7-day satisfaction guarantee",
+    "why3Desc": "For move-out cleaning, if you're not happy, we'll come back and fix it at no extra cost.",
+    "why4Title": "Professional, trained staff",
+    "why4Desc": "Every team member is meticulously selected and trained to the highest standards.",
+    "ctaBannerTitle": "Ready to experience the difference?",
+    "ctaBannerSubtitle": "Book your cleaning today — no payment required upfront.",
+    "valuesTitle": "Our values",
+    "contactTitle": "Get in touch"
+  },
+  "book": {
+    "title": "Book a Service",
+    "subtitle": "Fill in the form below and we'll confirm your booking by phone. No payment required upfront.",
+    "contactToBook": "Contact us to book",
+    "submit": "Submit Booking",
+    "submitting": "Submitting...",
+    "success": "Thank you! We've received your booking and will confirm by phone shortly.",
+    "successNext": "What happens next: Our team will call you within 24 hours to confirm the details and schedule.",
+    "error": "Something went wrong. Please try again or contact us directly.",
+    "sectionService": "Service details",
+    "sectionPersonal": "Your information",
+    "sectionExtra": "Additional details",
+    "serviceType": "Service type",
+    "homeSize": "Home size / rooms",
+    "date": "Date",
+    "time": "Time",
+    "address": "Address",
+    "postcode": "Postcode",
+    "phone": "Phone",
+    "email": "Email",
+    "name": "Your name",
+    "personnummer": "Social security number (personnummer)",
+    "personnummerHint": "Optional — needed for RUT tax deduction",
+    "instructions": "Special instructions",
+    "windowExtras": "Window cleaning extras",
+    "windowCount": "Number of windows",
+    "sprojs": "Spröjs (mullions)",
+    "fonsterbleck": "Fönsterbleck",
+    "fonsterkarm": "Fönsterkarm",
+    "flexibleDate": "Flexible date (100 kr discount)",
+    "estimatedQuote": "Estimated quote",
+    "afterRut": "After RUT (50%)",
+    "quoteDisclaimer": "Excl. RUT deduction. Final price confirmed by phone.",
+    "trustNoPayment": "No payment required",
+    "trustNoPaymentDesc": "We confirm your booking by phone first.",
+    "trustRut": "RUT 50% deduction",
+    "trustRutDesc": "Save 50% on eligible cleaning services.",
+    "trustGuarantee": "7-day guarantee",
+    "trustGuaranteeDesc": "Move-out cleaning backed by our satisfaction guarantee.",
+    "trustPhone": "Questions?",
+    "trustPhoneDesc": "Call us — we're happy to help.",
+    "homeSizeOptions": {
+      "1-2": "1-2 rooms",
+      "3-4": "3-4 rooms",
+      "5+": "5+ rooms"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have a question or want to get a quote? Reach out — we're happy to help.",
+    "formTitle": "Send us a message",
+    "formSubtitle": "We typically respond within 2 hours during business hours.",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formPhone": "Phone (optional)",
+    "formMessage": "Message",
+    "formSubmit": "Send message",
+    "formSuccess": "Thank you! We'll get back to you soon.",
+    "formError": "Something went wrong. Please try again or contact us directly.",
+    "orContactDirectly": "Or contact us directly",
+    "phoneTitle": "Call us",
+    "phoneDesc": "Speak to our team directly",
+    "whatsappTitle": "WhatsApp",
+    "whatsappDesc": "Quick and easy messaging",
+    "emailTitle": "Email",
+    "emailDesc": "We reply within 2 hours",
+    "hoursTitle": "Business hours",
+    "hoursWeekday": "Mon–Fri: 08:00–18:00",
+    "hoursWeekend": "Sat: 09:00–15:00",
+    "hoursSunday": "Sun: Closed",
+    "areaTitle": "Service area",
+    "areaDesc": "We serve Stockholm and surrounding areas. Contact us to check availability in your area."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "rut": {
+      "q": "What is RUT tax deduction?",
+      "a": "RUT allows you to get a 50% tax reduction on eligible cleaning services. You must be 18+, pay tax in Sweden. We handle the application when you book — no extra steps for you."
+    },
+    "guarantee": {
+      "q": "What is the 7-day satisfaction guarantee?",
+      "a": "For move-out cleaning, we offer a 7-day guarantee. If you or the buyer aren't satisfied, we'll come back and fix it at no extra cost."
+    },
+    "preparation": {
+      "q": "How should I prepare for a cleaning?",
+      "a": "For move-out: empty the home, pull out appliances if needed, defrost the freezer. For window cleaning: move furniture, remove curtains, have keys ready for locked windows."
+    },
+    "pricing": {
+      "q": "How is pricing determined?",
+      "a": "Pricing depends on service type, home size, and any extras (e.g. window count, spröjs). Get a quote via our booking form or contact us directly."
+    },
+    "booking": {
+      "q": "How does booking work?",
+      "a": "Fill in our booking form online. We'll call you within 24 hours to confirm the date, time, and details. No payment is required upfront."
+    },
+    "cancel": {
+      "q": "Can I cancel or reschedule?",
+      "a": "Yes, you can cancel or reschedule your booking by contacting us at least 24 hours before the scheduled time."
+    }
+  }
+}

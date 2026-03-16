@@ -1,0 +1,362 @@
+{
+  "common": {
+    "skipToContent": "Hoppa till innehåll",
+    "book": "Boka nu",
+    "contact": "Kontakt",
+    "learnMore": "Läs mer",
+    "home": "Hem",
+    "services": "Tjänster",
+    "about": "Om oss",
+    "phone": "Telefon",
+    "email": "E-post"
+  },
+  "nav": {
+    "home": "Hem",
+    "services": "Tjänster",
+    "book": "Boka",
+    "about": "Om oss",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "tagline": "Professionell städning för hem och företag. Pålitligt, flexibelt, enkelt — sedan dag ett.",
+    "quickLinks": "Snabblänkar",
+    "ourServices": "Våra tjänster",
+    "contactUs": "Kontakta oss",
+    "allRightsReserved": "Alla rättigheter förbehållna.",
+    "rutBadge": "RUT 50% skatteavdrag",
+    "guaranteeBadge": "7 dagars garanti"
+  },
+  "trust": {
+    "trustworthy": "Pålitligt",
+    "trustworthyDesc": "Du kan känna dig trygg med vår personal och kvaliteten på våra tjänster. Vårt noggrant utvalda och utbildade team är lika engagerade som skickliga.",
+    "flexible": "Flexibelt",
+    "flexibleDesc": "Vi anpassar våra tjänster efter dig. Med vårt breda utbud formar vi varje detalj efter dina behov. Resultatet blir alltid som du önskar.",
+    "easy": "Enkelt",
+    "easyDesc": "Att vara kund hos oss är enkelt. Våra innovativa lösningar och engagemang för tillgänglighet säkerställer ett smidigt och friktionsfritt samarbete.",
+    "rutInfo": "RUT-avdrag gäller — spara 50% på berättigade tjänster.",
+    "guarantee": "7 dagars nöjd-garanti på flyttstädning."
+  },
+  "home": {
+    "title": "Home Cleaning Service",
+    "subtitle": "Professionella städtjänster för hem och företag. Pålitligt, flexibelt, enkelt.",
+    "hero": {
+      "title": "Välkommen hem till ett fräscht städat hem.",
+      "subtitle": "Pålitligt. Flexibelt. Enkelt. Upplev hemstädning som den ska vara.",
+      "rutBadge": "RUT 50% skatteavdrag",
+      "guaranteeBadge": "7 dagars garanti",
+      "noPayment": "Ingen betalning krävs — vi bekräftar per telefon"
+    },
+    "quickBooking": {
+      "postalCodeLabel": "Postnummer",
+      "postalCodePlaceholder": "123 45",
+      "serviceLabel": "Välj tjänst",
+      "invalidPostalCode": "Ange ett giltigt svenskt postnummer (5 siffror)"
+    },
+    "cta": "Få en offert",
+    "statsCustomers": "500+",
+    "statsCustomersLabel": "Nöjda kunder",
+    "statsYears": "30",
+    "statsYearsLabel": "Års erfarenhet",
+    "statsServices": "5",
+    "statsServicesLabel": "Professionella tjänster",
+    "servicesTitle": "Hur kan vi hjälpa dig?",
+    "servicesSubtitle": "Från hemstädning till kontorsunderhåll — professionella tjänster anpassade efter dina behov.",
+    "howItWorksTitle": "Boka i 3 enkla steg",
+    "step1Title": "Välj din tjänst",
+    "step1Desc": "Välj den städtjänst som passar dina behov — från hemstädning till flytt- eller kontorsstädning.",
+    "step2Title": "Välj en tid",
+    "step2Desc": "Välj datum och tid som passar dig. Vi är flexibla och anpassar oss efter ditt schema.",
+    "step3Title": "Vi tar hand om resten",
+    "step3Desc": "Vi bekräftar din bokning per telefon och vårt professionella team kommer till din dörr — redo att få ditt hem att glänsa.",
+    "trustTitle": "Mer än bara service.",
+    "testimonialTitle": "Vad våra kunder säger",
+    "testimonial1Quote": "Alltid professionellt bemötande av alla. Städresultatet är superbra.",
+    "testimonial1Author": "Sara",
+    "testimonial1Location": "Stockholm",
+    "testimonial2Quote": "Flexibla, pålitliga och enkla att jobba med. Vårt kontor har aldrig sett bättre ut.",
+    "testimonial2Author": "Marcus",
+    "testimonial2Location": "Göteborg",
+    "ctaSectionTitle": "Redo för ett renare hem?",
+    "ctaSectionSubtitle": "Boka din städtjänst idag — eller kontakta oss för en gratis offert. Vi finns här för dig.",
+    "ctaSectionPhone": "Ring oss",
+    "ctaSectionWhatsapp": "WhatsApp",
+    "ctaSectionEmail": "Maila oss"
+  },
+  "services": {
+    "title": "Våra tjänster",
+    "subtitle": "Professionella städtjänster för hem och företag i hela Sverige.",
+    "homeCleaning": {
+      "name": "Hemstädning",
+      "description": "Löpande underhållsstädning för dig som vill komma hem till skinande rent."
+    },
+    "deepCleaning": {
+      "name": "Storstädning",
+      "description": "En grundlig städning som ger ditt hem en fräsch start."
+    },
+    "windowCleaning": {
+      "name": "Fönsterputs",
+      "description": "Kristallklara fönster, engångstjänst eller regelbunden schemaläggning."
+    },
+    "moveOutCleaning": {
+      "name": "Flyttstädning",
+      "description": "Professionell städning som uppfyller besiktningskrav för en smidigare flytt."
+    },
+    "officeCleaning": {
+      "name": "Kontorsstädning",
+      "description": "Håll kontoret rent, välkomnande och alltid redo att imponera."
+    }
+  },
+  "serviceDetail": {
+    "bookThisService": "Boka denna tjänst",
+    "getQuote": "Få en gratis offert",
+    "whatsIncluded": "Vad ingår",
+    "pricingHint": "Pris",
+    "relatedServices": "Andra tjänster du kanske gillar",
+    "preparation": "Förberedelser",
+    "notIncluded": "Ingår ej",
+    "homeCleaning": {
+      "intro": "Hemstädning på dina villkor — för dig som vill komma hem till skinande rent utan att tänka på det. Våra professionella städare tar hand om allt medan du fokuserar på det som betyder mest.",
+      "includes": [
+        "Alla rum: dammsugning av mattor, golv och golvlister",
+        "Avfläckning av luckor, kontakter, lampknappar, foder, lister, dörrar och dörrhandtag",
+        "Putsning av speglar",
+        "Tömning av papperskorgar (brännbart och komposterbart)",
+        "Damning av tavelramar och lampor",
+        "Avfläckning och moppning av golv",
+        "Kök: avtorkning av kyl/frys utvändigt, arbetsbänk, diskho, kran, spis, ugn, micro",
+        "Badrum: rengöring av badkar/dusch, handfat, toalett, golvbrunn, hängare"
+      ],
+      "pricing": "Från 299 kr/timme (före RUT-avdrag)"
+    },
+    "deepCleaning": {
+      "intro": "En grundlig städning som ger ditt hem en fräsch start — idealiskt före helger, fester eller helt enkelt för vardagslyx. Vi går bortom ytan för att få varje hörn att glänsa.",
+      "includes": [
+        "Grundlig rengöring av alla ytor",
+        "Insidan av skåp och lådor",
+        "Bakom och under vitvaror",
+        "Golvlister, belysning, ventiler",
+        "Perfekt för storstädning eller speciella tillfällen"
+      ],
+      "pricing": "Från 399 kr/timme (före RUT-avdrag)"
+    },
+    "windowCleaning": {
+      "intro": "Kristallklara fönster för privatpersoner i villa eller lägenhet, samt företag. Vi erbjuder både engångsputsning och abonnemang. Efter din första putsning får du ett prisförslag på abonnemang.",
+      "includes": [
+        "In- och utvändiga fönster",
+        "Karmar och fönsterbrädor",
+        "Spröjs och flerfönster (extra kostnad kan tillkomma)",
+        "Flexibelt datum ger rabatt (100 kr)",
+        "Alla rengöringsmaterial ingår"
+      ],
+      "preparation": [
+        "Flytta skrymmande möbler från fönstren",
+        "Ta ner gardiner",
+        "Plocka bort blommor och föremål från fönsterbrädor",
+        "Lägg fram nycklar för fönsterlås"
+      ],
+      "pricing": "Från 75 kr/fönster — få en offert för ditt hem"
+    },
+    "moveOutCleaning": {
+      "intro": "Vi har 7 dagars nöjd-garanti som gäller alla flyttstädtjänster. Vi vet hur viktigt det är att inte bara du som beställare blir nöjd utan även köparen. Du som säljare slipper oroa dig, och som köpare kan du känna dig trygg med att städningen är ordentligt utförd.",
+      "includesAllRooms": [
+        "Eluttag, strömbrytare, elskåp",
+        "Dörrar och dörrkarmar",
+        "Element",
+        "Golv och golvlister",
+        "Trösklar",
+        "Garderober"
+      ],
+      "includesBathroom": [
+        "Fast belysning",
+        "Badrumsskåp",
+        "Synliga rör",
+        "Speglar",
+        "Badkar och duschkabin",
+        "Toalett och tvättställ",
+        "Golvbrunnar",
+        "Avkalkning och rengöring av kakel och klinkers",
+        "Ventiler — utvändigt och invändigt",
+        "Tvättmaskin och torktumlare"
+      ],
+      "includesLaundry": [
+        "Damma av väggar och tak",
+        "Rengör tvättmaskin och tvättmedelsfack",
+        "Rengör torktumlare och filter",
+        "Rengör torkskåp och filter",
+        "Rengör tvättho och förvaringsutrymmen",
+        "Rengör golvbrunn och ventilationsdon",
+        "Rengör golv, dörr, dörrkarm och handtag"
+      ],
+      "includesKitchen": [
+        "Fast belysning",
+        "Spis, ugn, plåtar och galler",
+        "Mikrovågsugn",
+        "Kyl och frys",
+        "Skåp, lådor och luckor",
+        "Arbetsbänkar",
+        "Köksfläkt",
+        "Diskmaskin"
+      ],
+      "includesWindows": [
+        "Fönsterputsning (invändig)",
+        "Fönsterbänkar",
+        "Fönsterkarmar"
+      ],
+      "notIncluded": [
+        "Persienner",
+        "Borttagning av tejp, klistermärken etc.",
+        "Monterar ej ner/isär element",
+        "Tvätt av väggar",
+        "Balkong, altan, uterum, garage och förråd (offereras separat)"
+      ],
+      "preparation": [
+        "Hemmet är tömt på bohag",
+        "Vitvaror ska vara framdragna om det ska städas bakom",
+        "Galler över/under kyl/frys plockas bort och sätts tillbaka",
+        "Badkarsfront plockas av och sätts tillbaka av kund",
+        "Ge oss tillgång till övriga utrymmen (t.ex. förråd)",
+        "Frysen ska vara avfrostad"
+      ],
+      "rutExplainer": "Som privatperson har du rätt till RUT-avdrag på dina städtjänster, inklusive flyttstädning. Det innebär 50% skattereduktion. Vi hanterar ansökan automatiskt vid bokning — inga extra steg för dig.",
+      "includes": [
+        "Komplett checklista: alla rum, badrum, kök",
+        "Fönster (invändiga)",
+        "Insidan av skåp och vitvaror",
+        "RUT-avdrag gäller",
+        "7 dagars nöjd-garanti"
+      ],
+      "pricing": "Från 3 500 kr för standardlägenhet (före RUT)"
+    },
+    "officeCleaning": {
+      "intro": "Vi hjälper till att hålla kontoret rent, välkomnande och alltid redo att imponera både kunder och personal. Flexibla scheman anpassade efter era arbetstider.",
+      "includes": [
+        "Skrivbord och arbetsplatser",
+        "Gemensamma utrymmen och mötesrum",
+        "Toaletter",
+        "Kök/pausrum",
+        "Anpassningsbar frekvens och schema"
+      ],
+      "pricing": "Anpassat pris — kontakta oss för en skräddarsydd offert"
+    }
+  },
+  "about": {
+    "title": "Om Home Cleaning Service",
+    "intro": "I nästan 30 år har vi erbjudit förstklassiga hemtjänster. Varje dag använder vi den erfarenheten för att möta och överträffa våra kunders förväntningar.",
+    "storyTitle": "Vår historia",
+    "storyP1": "Det som började som ett litet familjeföretag har vuxit till en av Sveriges mest pålitliga städtjänstleverantörer. Vår passion för renlighet och kundvård driver allt vi gör.",
+    "storyP2": "Vi tror att ett rent hem eller kontor inte är en lyx — det är en grund för välmående. Därför går vi utöver det vanliga för att leverera resultat som får dig att le när du kliver in genom dörren.",
+    "whyChooseTitle": "Varför välja oss?",
+    "why1Title": "Nästan 30 års erfarenhet",
+    "why1Desc": "Decennier av expertis inom hem- och kontorsstädning i hela Sverige.",
+    "why2Title": "RUT 50% skatteavdrag",
+    "why2Desc": "Spara 50% på berättigade tjänster. Vi hanterar ansökan — inga extra steg för dig.",
+    "why3Title": "7 dagars nöjd-garanti",
+    "why3Desc": "För flyttstädning — om du inte är nöjd kommer vi tillbaka utan extra kostnad.",
+    "why4Title": "Professionell, utbildad personal",
+    "why4Desc": "Varje teammedlem är noggrant utvald och utbildad efter högsta standard.",
+    "ctaBannerTitle": "Redo att uppleva skillnaden?",
+    "ctaBannerSubtitle": "Boka din städning idag — ingen betalning krävs i förväg.",
+    "valuesTitle": "Våra värderingar",
+    "contactTitle": "Kontakta oss"
+  },
+  "book": {
+    "title": "Boka en tjänst",
+    "subtitle": "Fyll i formuläret nedan så bekräftar vi din bokning per telefon. Ingen betalning krävs i förväg.",
+    "contactToBook": "Kontakta oss för att boka",
+    "submit": "Skicka bokning",
+    "submitting": "Skickar...",
+    "success": "Tack! Vi har fått din bokning och bekräftar per telefon inom kort.",
+    "successNext": "Vad händer nu: Vårt team ringer dig inom 24 timmar för att bekräfta detaljer och schema.",
+    "error": "Något gick fel. Försök igen eller kontakta oss direkt.",
+    "sectionService": "Tjänstedetaljer",
+    "sectionPersonal": "Dina uppgifter",
+    "sectionExtra": "Ytterligare detaljer",
+    "serviceType": "Tjänstetyp",
+    "homeSize": "Hemstorlek / antal rum",
+    "date": "Datum",
+    "time": "Tid",
+    "address": "Adress",
+    "postcode": "Postnummer",
+    "phone": "Telefon",
+    "email": "E-post",
+    "name": "Ditt namn",
+    "personnummer": "Personnummer",
+    "personnummerHint": "Valfritt — behövs för RUT-avdrag",
+    "instructions": "Särskilda önskemål",
+    "windowExtras": "Fönsterputs tillägg",
+    "windowCount": "Antal fönster",
+    "sprojs": "Spröjs",
+    "fonsterbleck": "Fönsterbleck",
+    "fonsterkarm": "Fönsterkarm",
+    "flexibleDate": "Flexibelt datum (100 kr rabatt)",
+    "estimatedQuote": "Uppskattat pris",
+    "afterRut": "Efter RUT (50%)",
+    "quoteDisclaimer": "Exkl. RUT-avdrag. Slutpris bekräftas per telefon.",
+    "trustNoPayment": "Ingen betalning krävs",
+    "trustNoPaymentDesc": "Vi bekräftar din bokning per telefon först.",
+    "trustRut": "RUT 50% avdrag",
+    "trustRutDesc": "Spara 50% på berättigade städtjänster.",
+    "trustGuarantee": "7 dagars garanti",
+    "trustGuaranteeDesc": "Flyttstädning med vår nöjd-garanti.",
+    "trustPhone": "Frågor?",
+    "trustPhoneDesc": "Ring oss — vi hjälper gärna.",
+    "homeSizeOptions": {
+      "1-2": "1-2 rum",
+      "3-4": "3-4 rum",
+      "5+": "5+ rum"
+    }
+  },
+  "contact": {
+    "title": "Kontakta oss",
+    "subtitle": "Har du en fråga eller vill få en offert? Hör av dig — vi hjälper gärna till.",
+    "formTitle": "Skicka ett meddelande",
+    "formSubtitle": "Vi svarar vanligtvis inom 2 timmar under kontorstid.",
+    "formName": "Namn",
+    "formEmail": "E-post",
+    "formPhone": "Telefon (valfritt)",
+    "formMessage": "Meddelande",
+    "formSubmit": "Skicka meddelande",
+    "formSuccess": "Tack! Vi återkommer snart.",
+    "formError": "Något gick fel. Försök igen eller kontakta oss direkt.",
+    "orContactDirectly": "Eller kontakta oss direkt",
+    "phoneTitle": "Ring oss",
+    "phoneDesc": "Prata direkt med vårt team",
+    "whatsappTitle": "WhatsApp",
+    "whatsappDesc": "Snabbt och enkelt",
+    "emailTitle": "E-post",
+    "emailDesc": "Vi svarar inom 2 timmar",
+    "hoursTitle": "Öppettider",
+    "hoursWeekday": "Mån–Fre: 08:00–18:00",
+    "hoursWeekend": "Lör: 09:00–15:00",
+    "hoursSunday": "Sön: Stängt",
+    "areaTitle": "Serviceområde",
+    "areaDesc": "Vi betjänar Stockholm och omgivande områden. Kontakta oss för att kontrollera tillgänglighet i ditt område."
+  },
+  "faq": {
+    "title": "Vanliga frågor",
+    "rut": {
+      "q": "Vad är RUT-avdrag?",
+      "a": "RUT ger dig 50% skattereduktion på berättigade städtjänster. Du måste vara 18+, betala skatt i Sverige. Vi hanterar ansökan när du bokar — inga extra steg för dig."
+    },
+    "guarantee": {
+      "q": "Vad är 7 dagars nöjd-garantin?",
+      "a": "För flyttstädning erbjuder vi 7 dagars garanti. Om du eller köparen inte är nöjda kommer vi tillbaka och åtgärdar utan extra kostnad."
+    },
+    "preparation": {
+      "q": "Hur förbereder jag mig för en städning?",
+      "a": "För flytt: töm hemmet, dra fram vitvaror om det behövs, avfrosta frysen. För fönsterputs: flytta möbler, ta ner gardiner, ha nycklar redo för låsta fönster."
+    },
+    "pricing": {
+      "q": "Hur bestäms priset?",
+      "a": "Priset beror på tjänstetyp, hemstorlek och eventuella tillägg (t.ex. antal fönster, spröjs). Få en offert via vårt bokningsformulär eller kontakta oss direkt."
+    },
+    "booking": {
+      "q": "Hur fungerar bokningen?",
+      "a": "Fyll i vårt bokningsformulär online. Vi ringer dig inom 24 timmar för att bekräfta datum, tid och detaljer. Ingen betalning krävs i förväg."
+    },
+    "cancel": {
+      "q": "Kan jag avboka eller omboka?",
+      "a": "Ja, du kan avboka eller omboka genom att kontakta oss minst 24 timmar före den planerade tiden."
+    }
+  }
+}
