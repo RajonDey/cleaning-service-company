@@ -50,6 +50,7 @@ export async function appendBooking(data: BookingFormData): Promise<boolean> {
     data.phone,
     data.email,
     data.name ?? "",
+    data.personnummer ?? "",
     data.specialInstructions ?? "",
     "pending",
     data.windowCount ?? "",
@@ -61,7 +62,7 @@ export async function appendBooking(data: BookingFormData): Promise<boolean> {
 
   await sheets.spreadsheets.values.append({
     spreadsheetId: config.sheetId,
-    range: "Sheet1!A:Q",
+    range: "Sheet1!A:R",
     valueInputOption: "USER_ENTERED",
     insertDataOption: "INSERT_ROWS",
     requestBody: {

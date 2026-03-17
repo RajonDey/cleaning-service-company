@@ -19,6 +19,7 @@ export interface BookingFormData {
   phone: string;
   email: string;
   name?: string;
+  personnummer?: string;
   specialInstructions?: string;
   windowCount?: number;
   sprojs?: boolean;
