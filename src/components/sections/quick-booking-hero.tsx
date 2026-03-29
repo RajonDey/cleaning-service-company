@@ -66,7 +66,7 @@ export function QuickBookingHero({
           </div>
 
           <div className="mx-auto w-full max-w-md lg:mx-0 lg:ml-auto">
-            <QuoteRequestForm />
+            <QuoteRequestForm variant="heroGlass" />
           </div>
         </div>
       </Container>

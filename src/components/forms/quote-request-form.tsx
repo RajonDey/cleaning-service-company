@@ -25,7 +25,18 @@ const SERVICE_OPTIONS: { value: (typeof SERVICE_TYPES)[number]; key: string }[] 
     { value: "office_cleaning", key: "officeCleaning" },
   ];
 
-export function QuoteRequestForm({ className }: { className?: string }) {
+const heroGlassField =
+  "border-white/35 bg-white/88 text-foreground shadow-sm placeholder:text-foreground-muted focus:border-white/50 focus:ring-white/40";
+
+export function QuoteRequestForm({
+  className,
+  variant = "card",
+}: {
+  className?: string;
+  /** Frosted panel over the hero image (home). */
+  variant?: "card" | "heroGlass";
+}) {
+  const isGlass = variant === "heroGlass";
   const t = useTranslations("home.quoteForm");
   const tServices = useTranslations("services");
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -74,13 +85,35 @@ export function QuoteRequestForm({ className }: { className?: string }) {
     return (
       <div
         className={cn(
-          "rounded-card border border-primary/20 bg-background p-8 text-center shadow-card md:p-10",
+          "rounded-card p-8 text-center md:p-10",
+          isGlass
+            ? "border border-white/25 bg-white/10 shadow-2xl backdrop-blur-xl"
+            : "border border-primary/20 bg-background shadow-card",
           className
         )}
       >
-        <CheckCircle2 className="mx-auto mb-4 h-12 w-12 text-primary" />
-        <p className="text-lg font-semibold text-foreground">{t("success")}</p>
-        <p className="mt-2 text-sm text-foreground-muted">{t("successHint")}</p>
+        <CheckCircle2
+          className={cn(
+            "mx-auto mb-4 h-12 w-12",
+            isGlass ? "text-secondary" : "text-primary"
+          )}
+        />
+        <p
+          className={cn(
+            "text-lg font-semibold",
+            isGlass ? "text-white drop-shadow-sm" : "text-foreground"
+          )}
+        >
+          {t("success")}
+        </p>
+        <p
+          className={cn(
+            "mt-2 text-sm",
+            isGlass ? "text-white/85" : "text-foreground-muted"
+          )}
+        >
+          {t("successHint")}
+        </p>
       </div>
     );
   }
@@ -88,17 +121,32 @@ export function QuoteRequestForm({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "rounded-card border border-border bg-background p-6 shadow-card md:p-8",
+        "rounded-card p-6 md:p-8",
+        isGlass
+          ? "border border-white/25 bg-white/10 shadow-2xl backdrop-blur-xl supports-backdrop-filter:bg-white/8"
+          : "border border-border bg-background shadow-card",
         className
       )}
     >
-      <h2 className="mb-6 font-heading text-xl font-bold text-foreground md:text-2xl">
+      <h2
+        className={cn(
+          "mb-6 font-heading text-xl font-bold md:text-2xl",
+          isGlass ? "text-white drop-shadow-sm" : "text-foreground"
+        )}
+      >
         {t("title")}
       </h2>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {status === "error" && submitError && (
-          <div className="rounded-button bg-error/10 p-3 text-sm text-error">
+          <div
+            className={cn(
+              "rounded-button p-3 text-sm",
+              isGlass
+                ? "border border-red-300/40 bg-red-950/35 text-red-100 backdrop-blur-sm"
+                : "bg-error/10 text-error"
+            )}
+          >
             {submitError}
           </div>
         )}
@@ -107,7 +155,10 @@ export function QuoteRequestForm({ className }: { className?: string }) {
           <Select
             id="quote-service"
             {...register("serviceType")}
-            className={cn(errors.serviceType && "border-error")}
+            className={cn(
+              errors.serviceType && "border-error",
+              isGlass && heroGlassField
+            )}
             aria-invalid={!!errors.serviceType}
           >
             <option value="" disabled>
@@ -120,7 +171,14 @@ export function QuoteRequestForm({ className }: { className?: string }) {
             ))}
           </Select>
           {errors.serviceType && (
-            <p className="mt-1 text-sm text-error">{errors.serviceType.message}</p>
+            <p
+              className={cn(
+                "mt-1 text-sm",
+                isGlass ? "text-red-200" : "text-error"
+              )}
+            >
+              {errors.serviceType.message}
+            </p>
           )}
         </div>
 
@@ -132,11 +190,21 @@ export function QuoteRequestForm({ className }: { className?: string }) {
             autoComplete="off"
             placeholder={t("squareMetersPlaceholder")}
             {...register("squareMeters")}
-            className={cn(errors.squareMeters && "border-error")}
+            className={cn(
+              errors.squareMeters && "border-error",
+              isGlass && heroGlassField
+            )}
             aria-invalid={!!errors.squareMeters}
           />
           {errors.squareMeters && (
-            <p className="mt-1 text-sm text-error">{errors.squareMeters.message}</p>
+            <p
+              className={cn(
+                "mt-1 text-sm",
+                isGlass ? "text-red-200" : "text-error"
+              )}
+            >
+              {errors.squareMeters.message}
+            </p>
           )}
         </div>
 
@@ -147,11 +215,18 @@ export function QuoteRequestForm({ className }: { className?: string }) {
             autoComplete="address-level2"
             placeholder={t("cityPlaceholder")}
             {...register("city")}
-            className={cn(errors.city && "border-error")}
+            className={cn(errors.city && "border-error", isGlass && heroGlassField)}
             aria-invalid={!!errors.city}
           />
           {errors.city && (
-            <p className="mt-1 text-sm text-error">{errors.city.message}</p>
+            <p
+              className={cn(
+                "mt-1 text-sm",
+                isGlass ? "text-red-200" : "text-error"
+              )}
+            >
+              {errors.city.message}
+            </p>
           )}
         </div>
 
@@ -162,11 +237,21 @@ export function QuoteRequestForm({ className }: { className?: string }) {
             autoComplete="tel"
             placeholder={t("phonePlaceholder")}
             {...register("phone")}
-            className={cn(errors.phone && "border-error")}
+            className={cn(
+              errors.phone && "border-error",
+              isGlass && heroGlassField
+            )}
             aria-invalid={!!errors.phone}
           />
           {errors.phone && (
-            <p className="mt-1 text-sm text-error">{errors.phone.message}</p>
+            <p
+              className={cn(
+                "mt-1 text-sm",
+                isGlass ? "text-red-200" : "text-error"
+              )}
+            >
+              {errors.phone.message}
+            </p>
           )}
         </div>
 
@@ -177,15 +262,30 @@ export function QuoteRequestForm({ className }: { className?: string }) {
             autoComplete="email"
             placeholder={t("emailPlaceholder")}
             {...register("email")}
-            className={cn(errors.email && "border-error")}
+            className={cn(
+              errors.email && "border-error",
+              isGlass && heroGlassField
+            )}
             aria-invalid={!!errors.email}
           />
           {errors.email && (
-            <p className="mt-1 text-sm text-error">{errors.email.message}</p>
+            <p
+              className={cn(
+                "mt-1 text-sm",
+                isGlass ? "text-red-200" : "text-error"
+              )}
+            >
+              {errors.email.message}
+            </p>
           )}
         </div>
 
-        <label className="flex cursor-pointer items-start gap-3 text-sm leading-snug text-foreground">
+        <label
+          className={cn(
+            "flex cursor-pointer items-start gap-3 text-sm leading-snug",
+            isGlass ? "text-white/90" : "text-foreground"
+          )}
+        >
           <input
             type="checkbox"
             {...register("marketingConsent")}
@@ -205,7 +305,11 @@ export function QuoteRequestForm({ className }: { className?: string }) {
           </span>
         </label>
         {errors.marketingConsent && (
-          <p className="text-sm text-error">{errors.marketingConsent.message}</p>
+          <p
+            className={cn("text-sm", isGlass ? "text-red-200" : "text-error")}
+          >
+            {errors.marketingConsent.message}
+          </p>
         )}
 
         <Button
