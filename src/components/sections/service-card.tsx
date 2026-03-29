@@ -43,8 +43,8 @@ export function ServiceCard({
               src={image}
               alt=""
               fill
-              className="object-cover transition-transform duration-200 group-hover:scale-105"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+              className="object-cover object-center transition-transform duration-200 group-hover:scale-105"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
           </div>
         )}

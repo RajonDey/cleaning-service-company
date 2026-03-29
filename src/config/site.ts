@@ -50,6 +50,11 @@ export const siteConfig = {
       description:
         "Get in touch for a quote or questions. Call, email, or WhatsApp. We're happy to help.",
     },
+    privacy: {
+      title: "Privacy Policy",
+      description:
+        "How we handle personal data when you use our website, forms, and services.",
+    },
     /** Used for service detail pages — {serviceName} is replaced */
     serviceDetail: {
       titleTemplate: "{serviceName} | Home Cleaning Service",

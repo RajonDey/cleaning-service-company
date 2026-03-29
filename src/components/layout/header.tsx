@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Menu, X, Phone } from "lucide-react";
 import { Link as IntlLink, usePathname } from "@/i18n/routing";
@@ -9,6 +10,7 @@ import { Container } from "@/components/layout/container";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
+import { imageConfig } from "@/config/images";
 
 const navLinks = [
   { href: "/", key: "home" },
@@ -35,9 +37,18 @@ export function Header() {
         <div className="flex h-16 items-center justify-between md:h-18">
           <IntlLink
             href="/"
-            className="font-heading text-xl font-bold text-primary"
+            className="group inline-flex shrink-0 items-center rounded-2xl bg-background-muted/90 p-2 ring-1 ring-border/80 shadow-sm transition-colors hover:bg-background-muted hover:ring-primary/20"
+            aria-label={siteConfig.siteName}
           >
-            {siteConfig.siteName}
+            <Image
+              src={imageConfig.logo}
+              alt=""
+              width={48}
+              height={48}
+              className="size-10 object-contain md:size-12"
+              priority
+            />
+            <span className="sr-only">{siteConfig.siteName}</span>
           </IntlLink>
 
           <nav className="hidden items-center gap-6 lg:flex" aria-label="Main">

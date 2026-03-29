@@ -54,6 +54,7 @@ export function buildMetadata(
     book: "/book",
     about: "/about",
     contact: "/contact",
+    privacy: "/privacy",
   };
   const path = overrides?.path ?? pathMap[page] ?? "";
   const canonical = `${siteConfig.baseUrl}/${locale}${path}`.replace(/\/$/, "") || `${siteConfig.baseUrl}/${locale}`;

@@ -5,7 +5,7 @@ import { SERVICE_SLUGS } from "@/lib/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.baseUrl;
-  const routes = ["", "/services", "/book", "/about", "/contact"];
+  const routes = ["", "/services", "/book", "/about", "/contact", "/privacy"];
   const serviceRoutes = SERVICE_SLUGS.map((s) => `/services/${s}`);
 
   const entries: MetadataRoute.Sitemap = [];

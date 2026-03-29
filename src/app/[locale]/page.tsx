@@ -42,11 +42,6 @@ export default async function HomePage() {
       <QuickBookingHero
         title={t("hero.title")}
         subtitle={t("hero.subtitle")}
-        ctaText={t("cta")}
-        postalCodeLabel={t("quickBooking.postalCodeLabel")}
-        postalCodePlaceholder={t("quickBooking.postalCodePlaceholder")}
-        serviceLabel={t("quickBooking.serviceLabel")}
-        invalidPostalCode={t("quickBooking.invalidPostalCode")}
         rutBadge={t("hero.rutBadge")}
         guaranteeBadge={t("hero.guaranteeBadge")}
       />

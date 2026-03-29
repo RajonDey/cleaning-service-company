@@ -27,3 +27,12 @@ export interface BookingFormData {
   fonsterkarm?: boolean;
   flexibleDate?: boolean;
 }
+
+export interface QuoteRequestFormData {
+  serviceType: ServiceType;
+  squareMeters: number;
+  city: string;
+  phone: string;
+  email: string;
+  marketingConsent: boolean;
+}

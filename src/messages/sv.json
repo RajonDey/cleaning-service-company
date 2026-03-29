@@ -15,7 +15,8 @@
     "services": "Tjänster",
     "book": "Boka",
     "about": "Om oss",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "privacyPolicy": "Integritetspolicy"
   },
   "footer": {
     "tagline": "Professionell städning för hem och företag. Pålitligt, flexibelt, enkelt — sedan dag ett.",
@@ -80,7 +81,21 @@
     "ctaSectionSubtitle": "Boka din städtjänst idag — eller kontakta oss för en gratis offert. Vi finns här för dig.",
     "ctaSectionPhone": "Ring oss",
     "ctaSectionWhatsapp": "WhatsApp",
-    "ctaSectionEmail": "Maila oss"
+    "ctaSectionEmail": "Maila oss",
+    "quoteForm": {
+      "title": "Kostnadsfri offert inom 1 minut",
+      "servicePlaceholder": "Typ av tjänst",
+      "squareMetersPlaceholder": "Antal kvadratmeter",
+      "cityPlaceholder": "Stad",
+      "phonePlaceholder": "Telefonnummer",
+      "emailPlaceholder": "Email",
+      "consent": "Jag samtycker till att motta kommunikation i enlighet med <policy>integritetspolicyn</policy>.",
+      "submit": "Beräkna mitt pris",
+      "submitting": "Skickar...",
+      "success": "Tack! Vi har tagit emot din förfrågan.",
+      "successHint": "Vi återkommer snart med en prisuppskattning.",
+      "error": "Något gick fel. Försök igen eller kontakta oss direkt."
+    }
   },
   "services": {
     "title": "Våra tjänster",
@@ -331,6 +346,14 @@
     "hoursSunday": "Sön: Stängt",
     "areaTitle": "Serviceområde",
     "areaDesc": "Vi betjänar Stockholm och omgivande områden. Kontakta oss för att kontrollera tillgänglighet i ditt område."
+  },
+  "privacy": {
+    "title": "Integritetspolicy",
+    "intro": "Här beskriver vi hur vi behandlar personuppgifter när du använder vår webbplats och våra formulär. Ersätt denna text med er slutgiltiga policy (låt gärna en jurist granska den).",
+    "dataHeading": "Uppgifter vi samlar in",
+    "dataBody": "När du skickar in offert- eller bokningsformulär sparar vi uppgifterna du anger så att vi kan återkomma och leverera vår tjänst. Uppgifterna kan lagras i våra system (till exempel i ett kalkylark) och användas för att kontakta dig angående din förfrågan.",
+    "contactHeading": "Kontakt",
+    "contactBody": "Om du har frågor om integritet eller vill utöva dina rättigheter, kontakta oss via kontaktuppgifterna på vår kontaktsida."
   },
   "faq": {
     "title": "Vanliga frågor",

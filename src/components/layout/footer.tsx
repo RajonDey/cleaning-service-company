@@ -1,9 +1,11 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Phone, Mail, MessageCircle, Shield, BadgeCheck } from "lucide-react";
 import { Link as IntlLink } from "@/i18n/routing";
 import { Container } from "@/components/layout/container";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
+import { imageConfig } from "@/config/images";
 import { SERVICE_CONFIG, SERVICE_SLUGS, getServiceHref } from "@/lib/services";
 
 const navLinks = [
@@ -11,6 +13,7 @@ const navLinks = [
   { href: "/book", key: "book" },
   { href: "/about", key: "about" },
   { href: "/contact", key: "contact" },
+  { href: "/privacy", key: "privacyPolicy" },
 ] as const;
 
 export function Footer({ className }: { className?: string }) {
@@ -31,9 +34,17 @@ export function Footer({ className }: { className?: string }) {
           <div className="space-y-4">
             <IntlLink
               href="/"
-              className="font-heading text-lg font-bold text-white"
+              className="inline-flex rounded-2xl bg-white p-2.5 shadow-md ring-1 ring-white/20 transition-opacity hover:opacity-95"
+              aria-label={siteConfig.siteName}
             >
-              {siteConfig.siteName}
+              <Image
+                src={imageConfig.logo}
+                alt=""
+                width={44}
+                height={44}
+                className="size-11 object-contain"
+              />
+              <span className="sr-only">{siteConfig.siteName}</span>
             </IntlLink>
             <p className="text-sm leading-relaxed">
               {tFooter("tagline")}

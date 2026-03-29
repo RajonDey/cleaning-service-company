@@ -125,8 +125,8 @@ export default async function ServiceDetailPage({ params }: Props) {
                   src={image}
                   alt=""
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 768px"
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, 896px"
                   priority
                 />
               </div>

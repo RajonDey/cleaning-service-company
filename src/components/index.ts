@@ -31,4 +31,5 @@ export { TrustBadge } from "./sections/trust-badge";
 export { ContactBlock } from "./sections/contact-block";
 export { BookingForm } from "./forms/booking-form";
 export { ContactForm } from "./forms/contact-form";
+export { QuoteRequestForm } from "./forms/quote-request-form";
 export { ServiceCalculator } from "./forms/service-calculator";

@@ -1,5 +1,27 @@
 import { google } from "googleapis";
-import type { BookingFormData } from "@/types";
+import type { BookingFormData, QuoteRequestFormData } from "@/types";
+
+const DEFAULT_QUOTES_TAB = "QuoteLeads";
+
+function quotesTabName(): string {
+  return process.env.GOOGLE_SHEET_QUOTES_TAB?.trim() || DEFAULT_QUOTES_TAB;
+}
+
+function quotesAppendRange(): string {
+  return `${quotesTabName()}!A:G`;
+}
+
+function googleApiErrorText(err: unknown): string {
+  if (err instanceof Error) return err.message;
+  if (typeof err === "object" && err !== null) {
+    const o = err as {
+      message?: string;
+      response?: { data?: { error?: { message?: string } } };
+    };
+    return o.response?.data?.error?.message ?? o.message ?? "";
+  }
+  return String(err);
+}
 
 function getCredentials() {
   const credentials = process.env.GOOGLE_SHEETS_CREDENTIALS;
@@ -69,6 +91,61 @@ export async function appendBooking(data: BookingFormData): Promise<boolean> {
       values: [row],
     },
   });
+
+  return true;
+}
+
+export async function appendQuoteRequest(
+  data: QuoteRequestFormData
+): Promise<boolean> {
+  const config = getCredentials();
+  if (!config) {
+    throw new Error(
+      "Google Sheets not configured. Add GOOGLE_SHEETS_CREDENTIALS and GOOGLE_SHEET_ID to .env"
+    );
+  }
+
+  const auth = new google.auth.GoogleAuth({
+    credentials: config.auth,
+    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+  });
+
+  const sheets = google.sheets({ version: "v4", auth });
+
+  const row = [
+    new Date().toISOString(),
+    data.serviceType,
+    data.squareMeters,
+    data.city,
+    data.phone,
+    data.email,
+    data.marketingConsent ? "Yes" : "No",
+  ];
+
+  const tab = quotesTabName();
+  try {
+    await sheets.spreadsheets.values.append({
+      spreadsheetId: config.sheetId,
+      range: quotesAppendRange(),
+      valueInputOption: "USER_ENTERED",
+      insertDataOption: "INSERT_ROWS",
+      requestBody: {
+        values: [row],
+      },
+    });
+  } catch (err: unknown) {
+    const text = googleApiErrorText(err).toLowerCase();
+    if (
+      text.includes("unable to parse range") ||
+      text.includes("invalid data[0].range") ||
+      (text.includes("not found") && text.includes("range"))
+    ) {
+      throw new Error(
+        `Google Sheet is missing the "${tab}" tab. Add a new worksheet with that exact name in the same spreadsheet as Sheet1 (or set GOOGLE_SHEET_QUOTES_TAB in .env to match your tab name).`
+      );
+    }
+    throw err;
+  }
 
   return true;
 }

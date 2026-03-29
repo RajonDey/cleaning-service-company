@@ -50,7 +50,7 @@ export default async function AboutPage() {
                 src={imageConfig.about}
                 alt=""
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="(max-width: 768px) 100vw, 1280px"
                 priority
               />
