@@ -1,7 +1,18 @@
 import { google } from "googleapis";
 import type { BookingFormData, QuoteRequestFormData } from "@/types";
 
+const DEFAULT_BOOKINGS_TAB = "Sheet1";
 const DEFAULT_QUOTES_TAB = "QuoteLeads";
+
+function bookingsTabName(): string {
+  return (
+    process.env.GOOGLE_SHEET_BOOKINGS_TAB?.trim() || DEFAULT_BOOKINGS_TAB
+  );
+}
+
+function bookingsAppendRange(): string {
+  return `${bookingsTabName()}!A:R`;
+}
 
 function quotesTabName(): string {
   return process.env.GOOGLE_SHEET_QUOTES_TAB?.trim() || DEFAULT_QUOTES_TAB;
@@ -84,7 +95,7 @@ export async function appendBooking(data: BookingFormData): Promise<boolean> {
 
   await sheets.spreadsheets.values.append({
     spreadsheetId: config.sheetId,
-    range: "Sheet1!A:R",
+    range: bookingsAppendRange(),
     valueInputOption: "USER_ENTERED",
     insertDataOption: "INSERT_ROWS",
     requestBody: {
