@@ -10,20 +10,13 @@ import {
   quoteRequestSchema,
   type QuoteRequestParsed,
 } from "@/lib/quote-request-schema";
-import { SERVICE_TYPES } from "@/lib/booking-schema";
+import { SERVICE_FORM_OPTIONS } from "@/lib/booking-schema";
+import { WindowCleaningFieldsBlock } from "@/components/forms/window-cleaning-fields-block";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-
-const SERVICE_OPTIONS: { value: (typeof SERVICE_TYPES)[number]; key: string }[] =
-  [
-    { value: "home_cleaning", key: "homeCleaning" },
-    { value: "deep_cleaning", key: "deepCleaning" },
-    { value: "window_cleaning", key: "windowCleaning" },
-    { value: "move_out", key: "moveOutCleaning" },
-    { value: "office_cleaning", key: "officeCleaning" },
-  ];
 
 const heroGlassField =
   "border-white/35 bg-white/88 text-foreground shadow-sm placeholder:text-foreground-muted focus:border-white/50 focus:ring-white/40";
@@ -45,19 +38,30 @@ export function QuoteRequestForm({
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(quoteRequestSchema),
     defaultValues: {
-      // Placeholder option uses value ""; validated on submit.
       serviceType: "" as QuoteRequestParsed["serviceType"],
       squareMeters: "" as unknown as QuoteRequestParsed["squareMeters"],
       city: "",
       phone: "",
       email: "",
       marketingConsent: false,
+      name: "",
+      address: "",
+      normalWindows: 0,
+      twoPaneWindows: 0,
+      glassDoors: 0,
+      sprojs: false,
+      fonsterbleck: false,
+      fonsterkarm: false,
     },
   });
+
+  const serviceType = watch("serviceType");
+  const isWindowCleaning = serviceType === "window_cleaning";
 
   const onSubmit = async (data: QuoteRequestParsed) => {
     setStatus("idle");
@@ -164,7 +168,7 @@ export function QuoteRequestForm({
             <option value="" disabled>
               {t("servicePlaceholder")}
             </option>
-            {SERVICE_OPTIONS.map(({ value, key }) => (
+            {SERVICE_FORM_OPTIONS.map(({ value, key }) => (
               <option key={value} value={value}>
                 {tServices(`${key}.name`)}
               </option>
@@ -182,31 +186,84 @@ export function QuoteRequestForm({
           )}
         </div>
 
-        <div>
-          <Input
-            id="quote-sqm"
-            type="text"
-            inputMode="numeric"
-            autoComplete="off"
-            placeholder={t("squareMetersPlaceholder")}
-            {...register("squareMeters")}
-            className={cn(
-              errors.squareMeters && "border-error",
-              isGlass && heroGlassField
-            )}
-            aria-invalid={!!errors.squareMeters}
-          />
-          {errors.squareMeters && (
-            <p
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <Input
+              id="quote-name"
+              autoComplete="name"
+              placeholder={t("namePlaceholder")}
+              aria-label={t("namePlaceholder")}
+              {...register("name")}
               className={cn(
-                "mt-1 text-sm",
-                isGlass ? "text-red-200" : "text-error"
+                errors.name && "border-error",
+                isGlass && heroGlassField
               )}
-            >
-              {errors.squareMeters.message}
-            </p>
-          )}
+              aria-invalid={!!errors.name}
+            />
+            {errors.name && (
+              <p
+                className={cn(
+                  "mt-1 text-sm",
+                  isGlass ? "text-red-200" : "text-error"
+                )}
+              >
+                {errors.name.message}
+              </p>
+            )}
+          </div>
+          <div>
+            <Input
+              id="quote-address"
+              autoComplete="street-address"
+              placeholder={t("addressPlaceholder")}
+              aria-label={t("addressPlaceholder")}
+              {...register("address")}
+              className={cn(
+                errors.address && "border-error",
+                isGlass && heroGlassField
+              )}
+              aria-invalid={!!errors.address}
+            />
+            {errors.address && (
+              <p
+                className={cn(
+                  "mt-1 text-sm",
+                  isGlass ? "text-red-200" : "text-error"
+                )}
+              >
+                {errors.address.message}
+              </p>
+            )}
+          </div>
         </div>
+
+        {!isWindowCleaning && (
+          <div>
+            <Input
+              id="quote-sqm"
+              type="text"
+              inputMode="numeric"
+              autoComplete="off"
+              placeholder={t("squareMetersPlaceholder")}
+              {...register("squareMeters")}
+              className={cn(
+                errors.squareMeters && "border-error",
+                isGlass && heroGlassField
+              )}
+              aria-invalid={!!errors.squareMeters}
+            />
+            {errors.squareMeters && (
+              <p
+                className={cn(
+                  "mt-1 text-sm",
+                  isGlass ? "text-red-200" : "text-error"
+                )}
+              >
+                {errors.squareMeters.message}
+              </p>
+            )}
+          </div>
+        )}
 
         <div>
           <Input
@@ -231,6 +288,47 @@ export function QuoteRequestForm({
         </div>
 
         <div>
+          <Label
+            htmlFor="quote-email"
+            className={cn(isGlass && "text-white/90")}
+          >
+            {t("emailRequiredLabel")}
+          </Label>
+          <Input
+            id="quote-email"
+            type="email"
+            autoComplete="email"
+            placeholder={t("emailPlaceholder")}
+            {...register("email")}
+            className={cn(
+              "mt-2",
+              errors.email && "border-error",
+              isGlass && heroGlassField
+            )}
+            aria-invalid={!!errors.email}
+          />
+          {errors.email && (
+            <p
+              className={cn(
+                "mt-1 text-sm",
+                isGlass ? "text-red-200" : "text-error"
+              )}
+            >
+              {errors.email.message}
+            </p>
+          )}
+        </div>
+
+        {isWindowCleaning && (
+          <WindowCleaningFieldsBlock
+            register={register}
+            errors={errors}
+            variant={isGlass ? "heroGlass" : "default"}
+            title={t("windowSectionTitle")}
+          />
+        )}
+
+        <div>
           <Input
             id="quote-phone"
             type="tel"
@@ -251,31 +349,6 @@ export function QuoteRequestForm({
               )}
             >
               {errors.phone.message}
-            </p>
-          )}
-        </div>
-
-        <div>
-          <Input
-            id="quote-email"
-            type="email"
-            autoComplete="email"
-            placeholder={t("emailPlaceholder")}
-            {...register("email")}
-            className={cn(
-              errors.email && "border-error",
-              isGlass && heroGlassField
-            )}
-            aria-invalid={!!errors.email}
-          />
-          {errors.email && (
-            <p
-              className={cn(
-                "mt-1 text-sm",
-                isGlass ? "text-red-200" : "text-error"
-              )}
-            >
-              {errors.email.message}
             </p>
           )}
         </div>
@@ -323,6 +396,8 @@ export function QuoteRequestForm({
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
               {t("submitting")}
             </>
+          ) : isWindowCleaning ? (
+            t("submitWindow")
           ) : (
             t("submit")
           )}

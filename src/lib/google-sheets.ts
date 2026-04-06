@@ -11,7 +11,7 @@ function bookingsTabName(): string {
 }
 
 function bookingsAppendRange(): string {
-  return `${bookingsTabName()}!A:R`;
+  return `${bookingsTabName()}!A:U`;
 }
 
 function quotesTabName(): string {
@@ -19,7 +19,7 @@ function quotesTabName(): string {
 }
 
 function quotesAppendRange(): string {
-  return `${quotesTabName()}!A:G`;
+  return `${quotesTabName()}!A:P`;
 }
 
 function googleApiErrorText(err: unknown): string {
@@ -86,11 +86,14 @@ export async function appendBooking(data: BookingFormData): Promise<boolean> {
     data.personnummer ?? "",
     data.specialInstructions ?? "",
     "pending",
-    data.windowCount ?? "",
+    data.windowHelpType ?? "",
+    data.normalWindows ?? 0,
+    data.twoPaneWindows ?? 0,
+    data.glassDoors ?? 0,
     data.sprojs ? "Yes" : "",
     data.fonsterbleck ? "Yes" : "",
     data.fonsterkarm ? "Yes" : "",
-    data.flexibleDate ? "Yes" : "",
+    "",
   ];
 
   await sheets.spreadsheets.values.append({
@@ -126,11 +129,20 @@ export async function appendQuoteRequest(
   const row = [
     new Date().toISOString(),
     data.serviceType,
-    data.squareMeters,
+    data.squareMeters ?? "",
     data.city,
     data.phone,
     data.email,
     data.marketingConsent ? "Yes" : "No",
+    data.name ?? "",
+    data.address ?? "",
+    data.windowHelpType ?? "",
+    data.normalWindows ?? 0,
+    data.twoPaneWindows ?? 0,
+    data.glassDoors ?? 0,
+    data.sprojs ? "Yes" : "",
+    data.fonsterbleck ? "Yes" : "",
+    data.fonsterkarm ? "Yes" : "",
   ];
 
   const tab = quotesTabName();
@@ -152,7 +164,7 @@ export async function appendQuoteRequest(
       (text.includes("not found") && text.includes("range"))
     ) {
       throw new Error(
-        `Google Sheet is missing the "${tab}" tab. Add a new worksheet with that exact name in the same spreadsheet as Sheet1 (or set GOOGLE_SHEET_QUOTES_TAB in .env to match your tab name).`
+        `Google Sheet is missing the "${tab}" tab (or the sheet range does not match). Add the tab and ensure columns A–P exist for quote leads, or set GOOGLE_SHEET_QUOTES_TAB in .env to match your tab name.`
       );
     }
     throw err;

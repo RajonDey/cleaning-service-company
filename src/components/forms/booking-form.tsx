@@ -8,6 +8,7 @@ import { Loader2, CheckCircle2, ArrowRight } from "lucide-react";
 import {
   bookingSchema,
   SERVICE_TYPES,
+  SERVICE_FORM_OPTIONS,
   type BookingSchema,
 } from "@/lib/booking-schema";
 import { Button } from "@/components/ui/button";
@@ -15,15 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select } from "@/components/ui/select";
-import { cn } from "@/lib/utils";
-
-const SERVICE_OPTIONS: { value: (typeof SERVICE_TYPES)[number]; key: string }[] = [
-  { value: "home_cleaning", key: "homeCleaning" },
-  { value: "deep_cleaning", key: "deepCleaning" },
-  { value: "window_cleaning", key: "windowCleaning" },
-  { value: "move_out", key: "moveOutCleaning" },
-  { value: "office_cleaning", key: "officeCleaning" },
-];
+import { WindowCleaningFieldsBlock } from "@/components/forms/window-cleaning-fields-block";
 
 const TIME_OPTIONS = Array.from({ length: 21 }, (_, i) => {
   const hour = 8 + Math.floor(i / 2);
@@ -58,10 +51,12 @@ export function BookingForm({
       serviceType: initialServiceType,
       homeSize: "3-4",
       postcode: initialPostcode ?? "",
+      normalWindows: 0,
+      twoPaneWindows: 0,
+      glassDoors: 0,
       sprojs: false,
       fonsterbleck: false,
       fonsterkarm: false,
-      flexibleDate: false,
     },
   });
 
@@ -112,7 +107,7 @@ export function BookingForm({
           <div>
             <Label htmlFor="serviceType">{t("serviceType")}</Label>
             <Select id="serviceType" {...register("serviceType")} className="mt-2">
-              {SERVICE_OPTIONS.map(({ value, key }) => (
+              {SERVICE_FORM_OPTIONS.map(({ value, key }) => (
                 <option key={value} value={value}>
                   {tServices(`${key}.name`)}
                 </option>
@@ -149,21 +144,7 @@ export function BookingForm({
         </div>
 
         {isWindowCleaning && (
-          <div className="space-y-4 rounded-button border border-secondary/20 bg-secondary/5 p-4">
-            <h3 className="font-heading text-sm font-semibold text-foreground">{t("windowExtras")}</h3>
-            <div>
-              <Label htmlFor="windowCount">{t("windowCount")}</Label>
-              <Input id="windowCount" type="number" min={1} {...register("windowCount", { valueAsNumber: true })} className="mt-2" />
-            </div>
-            <div className="flex flex-wrap gap-4">
-              {(["sprojs", "fonsterbleck", "fonsterkarm", "flexibleDate"] as const).map((field) => (
-                <label key={field} className="flex items-center gap-2">
-                  <input type="checkbox" {...register(field)} className="rounded accent-primary" />
-                  <span className="text-sm">{t(field)}</span>
-                </label>
-              ))}
-            </div>
-          </div>
+          <WindowCleaningFieldsBlock register={register} errors={errors} />
         )}
       </fieldset>
 

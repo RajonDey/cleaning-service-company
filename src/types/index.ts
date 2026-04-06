@@ -2,6 +2,10 @@
  * Shared types for the application.
  */
 
+import type { WindowHelpType } from "@/lib/window-cleaning-fields";
+
+export type { WindowHelpType };
+
 export type ServiceType =
   | "home_cleaning"
   | "deep_cleaning"
@@ -21,18 +25,30 @@ export interface BookingFormData {
   name?: string;
   personnummer?: string;
   specialInstructions?: string;
-  windowCount?: number;
+  windowHelpType?: WindowHelpType;
+  normalWindows: number;
+  twoPaneWindows: number;
+  glassDoors: number;
   sprojs?: boolean;
   fonsterbleck?: boolean;
   fonsterkarm?: boolean;
-  flexibleDate?: boolean;
 }
 
 export interface QuoteRequestFormData {
   serviceType: ServiceType;
-  squareMeters: number;
+  /** Omitted or 0 for window-cleaning quote leads */
+  squareMeters?: number;
   city: string;
   phone: string;
   email: string;
   marketingConsent: boolean;
+  name: string;
+  address: string;
+  windowHelpType?: WindowHelpType;
+  normalWindows: number;
+  twoPaneWindows: number;
+  glassDoors: number;
+  sprojs?: boolean;
+  fonsterbleck?: boolean;
+  fonsterkarm?: boolean;
 }

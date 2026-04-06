@@ -18,22 +18,24 @@ const EXTRAS_PRICE = 50;
 export interface ServiceCalculatorProps {
   serviceType: string;
   homeSize: string;
-  windowCount?: number;
+  normalWindows?: number;
+  twoPaneWindows?: number;
+  glassDoors?: number;
   sprojs?: boolean;
   fonsterbleck?: boolean;
   fonsterkarm?: boolean;
-  flexibleDate?: boolean;
   className?: string;
 }
 
 export function ServiceCalculator({
   serviceType,
   homeSize,
-  windowCount = 0,
+  normalWindows = 0,
+  twoPaneWindows = 0,
+  glassDoors = 0,
   sprojs = false,
   fonsterbleck = false,
   fonsterkarm = false,
-  flexibleDate = false,
   className,
 }: ServiceCalculatorProps) {
   const t = useTranslations("book");
@@ -41,15 +43,25 @@ export function ServiceCalculator({
   const estimate = useMemo(() => {
     const base = BASE_PRICES[serviceType]?.[homeSize] ?? 0;
     if (serviceType === "window_cleaning") {
-      let total = base + (windowCount || 0) * WINDOW_PRICE_PER;
+      const units =
+        (normalWindows || 0) + (twoPaneWindows || 0) + (glassDoors || 0);
+      let total = base + units * WINDOW_PRICE_PER;
       if (sprojs) total += EXTRAS_PRICE;
       if (fonsterbleck) total += EXTRAS_PRICE;
       if (fonsterkarm) total += EXTRAS_PRICE;
-      if (flexibleDate) total -= 100;
       return Math.max(0, total);
     }
     return base;
-  }, [serviceType, homeSize, windowCount, sprojs, fonsterbleck, fonsterkarm, flexibleDate]);
+  }, [
+    serviceType,
+    homeSize,
+    normalWindows,
+    twoPaneWindows,
+    glassDoors,
+    sprojs,
+    fonsterbleck,
+    fonsterkarm,
+  ]);
 
   if (estimate <= 0) return null;
 

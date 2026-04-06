@@ -1,12 +1,30 @@
 import { z } from "zod";
+import {
+  WINDOW_HELP_TYPES,
+  nonNegativeInt,
+  windowCleaningCountsSum,
+} from "@/lib/window-cleaning-fields";
 
+/** Client order: Flytt → Fönster → Stor → Kontor → Hem */
 export const SERVICE_TYPES = [
-  "home_cleaning",
-  "deep_cleaning",
-  "window_cleaning",
   "move_out",
+  "window_cleaning",
+  "deep_cleaning",
   "office_cleaning",
+  "home_cleaning",
 ] as const;
+
+/** i18n key under `services.{key}.name` for each service type */
+export const SERVICE_FORM_OPTIONS: {
+  value: (typeof SERVICE_TYPES)[number];
+  key: string;
+}[] = [
+  { value: "move_out", key: "moveOutCleaning" },
+  { value: "window_cleaning", key: "windowCleaning" },
+  { value: "deep_cleaning", key: "deepCleaning" },
+  { value: "office_cleaning", key: "officeCleaning" },
+  { value: "home_cleaning", key: "homeCleaning" },
+];
 
 const HOME_SIZES = ["1-2", "3-4", "5+"] as const;
 
@@ -23,19 +41,30 @@ export const bookingSchema = z
     name: z.string().optional(),
     personnummer: z.string().optional(),
     specialInstructions: z.string().optional(),
-    // Window cleaning extras
-    windowCount: z.coerce.number().optional(),
+    windowHelpType: z.enum(WINDOW_HELP_TYPES).optional(),
+    normalWindows: nonNegativeInt,
+    twoPaneWindows: nonNegativeInt,
+    glassDoors: nonNegativeInt,
     sprojs: z.boolean().optional(),
     fonsterbleck: z.boolean().optional(),
     fonsterkarm: z.boolean().optional(),
-    flexibleDate: z.boolean().optional(),
   })
-  .refine(
-    (data) => {
-      if (data.serviceType !== "window_cleaning") return true;
-      return true; // windowCount optional for window cleaning
-    },
-    { message: "Window count required for window cleaning", path: ["windowCount"] }
-  );
+  .superRefine((data, ctx) => {
+    if (data.serviceType !== "window_cleaning") return;
+    if (!data.windowHelpType) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Choose what you need help with",
+        path: ["windowHelpType"],
+      });
+    }
+    if (windowCleaningCountsSum(data) < 1) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Enter at least one window count",
+        path: ["normalWindows"],
+      });
+    }
+  });
 
 export type BookingSchema = z.infer<typeof bookingSchema>;

@@ -24,11 +24,27 @@ function getResend() {
   return { resend: new Resend(apiKey), fromEmail, notifyEmail };
 }
 
+function quoteEmailWindowRows(data: QuoteRequestFormData): string {
+  if (data.serviceType !== "window_cleaning") return "";
+  return `
+          <tr><td style="padding: 8px 0; color: #71717a;">Window scope</td><td style="padding: 8px 0;">${data.windowHelpType ?? "—"}</td></tr>
+          <tr><td style="padding: 8px 0; color: #71717a;">Normal windows</td><td style="padding: 8px 0;">${data.normalWindows}</td></tr>
+          <tr><td style="padding: 8px 0; color: #71717a;">Two-pane windows</td><td style="padding: 8px 0;">${data.twoPaneWindows}</td></tr>
+          <tr><td style="padding: 8px 0; color: #71717a;">Glass doors</td><td style="padding: 8px 0;">${data.glassDoors}</td></tr>
+          <tr><td style="padding: 8px 0; color: #71717a;">Spröjs</td><td style="padding: 8px 0;">${data.sprojs ? "Yes" : "No"}</td></tr>
+          <tr><td style="padding: 8px 0; color: #71717a;">Fönsterbleck</td><td style="padding: 8px 0;">${data.fonsterbleck ? "Yes" : "No"}</td></tr>
+          <tr><td style="padding: 8px 0; color: #71717a;">Fönsterkarm</td><td style="padding: 8px 0;">${data.fonsterkarm ? "Yes" : "No"}</td></tr>`;
+}
+
 async function sendOwnerQuoteNotification(data: QuoteRequestFormData) {
   const config = getResend();
   if (!config?.notifyEmail) return;
 
   const serviceName = SERVICE_LABELS[data.serviceType] ?? data.serviceType;
+  const sqmRow =
+    data.serviceType === "window_cleaning"
+      ? ""
+      : `<tr><td style="padding: 8px 0; color: #71717a;">Square meters</td><td style="padding: 8px 0;">${data.squareMeters}</td></tr>`;
 
   await config.resend.emails.send({
     from: config.fromEmail,
@@ -40,7 +56,10 @@ async function sendOwnerQuoteNotification(data: QuoteRequestFormData) {
         <h2 style="color: #059669;">New quote request (home form)</h2>
         <table style="width: 100%; border-collapse: collapse;">
           <tr><td style="padding: 8px 0; color: #71717a;">Service</td><td style="padding: 8px 0; font-weight: 600;">${serviceName}</td></tr>
-          <tr><td style="padding: 8px 0; color: #71717a;">Square meters</td><td style="padding: 8px 0;">${data.squareMeters}</td></tr>
+          <tr><td style="padding: 8px 0; color: #71717a;">Name</td><td style="padding: 8px 0;">${data.name}</td></tr>
+          <tr><td style="padding: 8px 0; color: #71717a;">Address</td><td style="padding: 8px 0;">${data.address}</td></tr>
+          ${sqmRow}
+          ${quoteEmailWindowRows(data)}
           <tr><td style="padding: 8px 0; color: #71717a;">City</td><td style="padding: 8px 0;">${data.city}</td></tr>
           <tr><td style="padding: 8px 0; color: #71717a;">Phone</td><td style="padding: 8px 0;">${data.phone}</td></tr>
           <tr><td style="padding: 8px 0; color: #71717a;">Email</td><td style="padding: 8px 0;">${data.email}</td></tr>
@@ -66,11 +85,21 @@ export async function POST(request: Request) {
     const raw = parsed.data;
     const data: QuoteRequestFormData = {
       serviceType: raw.serviceType,
-      squareMeters: raw.squareMeters,
+      squareMeters:
+        raw.serviceType === "window_cleaning" ? undefined : raw.squareMeters,
       city: raw.city,
       phone: raw.phone,
       email: raw.email,
       marketingConsent: raw.marketingConsent,
+      name: raw.name,
+      address: raw.address,
+      windowHelpType: raw.windowHelpType,
+      normalWindows: raw.normalWindows,
+      twoPaneWindows: raw.twoPaneWindows,
+      glassDoors: raw.glassDoors,
+      sprojs: raw.sprojs,
+      fonsterbleck: raw.fonsterbleck,
+      fonsterkarm: raw.fonsterkarm,
     };
 
     if (!isGoogleSheetsConfigured()) {

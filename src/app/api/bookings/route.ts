@@ -21,17 +21,26 @@ function getResend() {
   return { resend: new Resend(apiKey), fromEmail, notifyEmail };
 }
 
+const WINDOW_SCOPE_LABEL: Record<string, string> = {
+  exterior: "Exterior only",
+  interior_exterior: "Interior + exterior",
+  interior_exterior_between: "Interior, exterior + between panes",
+};
+
 function buildWindowExtras(data: BookingFormData): string {
   if (data.serviceType !== "window_cleaning") return "";
+  const scope = data.windowHelpType
+    ? WINDOW_SCOPE_LABEL[data.windowHelpType] ?? data.windowHelpType
+    : "";
   return [
-    data.windowCount && `Windows: ${data.windowCount}`,
+    scope && `Scope: ${scope}`,
+    `Counts — normal: ${data.normalWindows}, two-pane: ${data.twoPaneWindows}, glass doors: ${data.glassDoors}`,
     data.sprojs && "Spröjs",
-    data.fonsterbleck && "Fönsterbleck",
-    data.fonsterkarm && "Fönsterkarm",
-    data.flexibleDate && "Flexible date (100 kr off)",
+    data.fonsterbleck && "Fönsterbleck cleaning",
+    data.fonsterkarm && "Fönsterkarm cleaning",
   ]
     .filter(Boolean)
-    .join(", ");
+    .join("; ");
 }
 
 async function sendOwnerNotification(data: BookingFormData) {
@@ -72,6 +81,7 @@ async function sendCustomerConfirmation(data: BookingFormData) {
   if (!config || !data.email) return;
 
   const serviceName = SERVICE_LABELS[data.serviceType] ?? data.serviceType;
+  const windowExtras = buildWindowExtras(data);
   const { siteName, contact } = siteConfig;
 
   await config.resend.emails.send({
@@ -89,6 +99,7 @@ async function sendCustomerConfirmation(data: BookingFormData) {
           <p style="margin: 4px 0;"><strong>Service:</strong> ${serviceName}</p>
           <p style="margin: 4px 0;"><strong>Date:</strong> ${data.date} at ${data.time}</p>
           <p style="margin: 4px 0;"><strong>Address:</strong> ${data.address}, ${data.postcode}</p>
+          ${data.serviceType === "window_cleaning" && windowExtras ? `<p style="margin: 4px 0;"><strong>Window details:</strong> ${windowExtras}</p>` : ""}
         </div>
 
         <div style="margin: 24px 0; padding: 16px; background: #d1fae5; border-radius: 8px;">
