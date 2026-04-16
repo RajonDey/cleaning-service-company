@@ -62,7 +62,7 @@ async function sendOwnerNotification(data: BookingFormData) {
           <tr><td style="padding: 8px 0; color: #71717a;">Date & Time</td><td style="padding: 8px 0;">${data.date} at ${data.time}</td></tr>
           <tr><td style="padding: 8px 0; color: #71717a;">Address</td><td style="padding: 8px 0;">${data.address}, ${data.postcode}</td></tr>
           <tr><td style="padding: 8px 0; color: #71717a;">Customer</td><td style="padding: 8px 0;">${data.name ?? "—"}</td></tr>
-          <tr><td style="padding: 8px 0; color: #71717a;">Phone</td><td style="padding: 8px 0;">${data.phone}</td></tr>
+          <tr><td style="padding: 8px 0; color: #71717a;">Phone</td><td style="padding: 8px 0;">${data.phone || "—"}</td></tr>
           <tr><td style="padding: 8px 0; color: #71717a;">Email</td><td style="padding: 8px 0;">${data.email}</td></tr>
           ${data.personnummer ? `<tr><td style="padding: 8px 0; color: #71717a;">Personnummer</td><td style="padding: 8px 0;">${data.personnummer}</td></tr>` : ""}
           ${windowExtras ? `<tr><td style="padding: 8px 0; color: #71717a;">Window Extras</td><td style="padding: 8px 0;">${windowExtras}</td></tr>` : ""}

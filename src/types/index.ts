@@ -20,7 +20,7 @@ export interface BookingFormData {
   time: string;
   address: string;
   postcode: string;
-  phone: string;
+  phone?: string;
   email: string;
   name?: string;
   personnummer?: string;
@@ -39,7 +39,7 @@ export interface QuoteRequestFormData {
   /** Omitted or 0 for window-cleaning quote leads */
   squareMeters?: number;
   city: string;
-  phone: string;
+  phone?: string;
   email: string;
   marketingConsent: boolean;
   name: string;

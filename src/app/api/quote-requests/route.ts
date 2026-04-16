@@ -61,7 +61,7 @@ async function sendOwnerQuoteNotification(data: QuoteRequestFormData) {
           ${sqmRow}
           ${quoteEmailWindowRows(data)}
           <tr><td style="padding: 8px 0; color: #71717a;">City</td><td style="padding: 8px 0;">${data.city}</td></tr>
-          <tr><td style="padding: 8px 0; color: #71717a;">Phone</td><td style="padding: 8px 0;">${data.phone}</td></tr>
+          <tr><td style="padding: 8px 0; color: #71717a;">Phone</td><td style="padding: 8px 0;">${data.phone || "—"}</td></tr>
           <tr><td style="padding: 8px 0; color: #71717a;">Email</td><td style="padding: 8px 0;">${data.email}</td></tr>
           <tr><td style="padding: 8px 0; color: #71717a;">Marketing consent</td><td style="padding: 8px 0;">${data.marketingConsent ? "Yes" : "No"}</td></tr>
         </table>
