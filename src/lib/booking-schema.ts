@@ -36,7 +36,7 @@ export const bookingSchema = z
     time: z.string().min(1, "Time is required"),
     address: z.string().min(1, "Address is required"),
     postcode: z.string().min(1, "Postcode is required"),
-    phone: z.string().min(1, "Phone is required"),
+    phone: z.string().optional(),
     email: z.string().email("Invalid email"),
     name: z.string().optional(),
     personnummer: z.string().optional(),

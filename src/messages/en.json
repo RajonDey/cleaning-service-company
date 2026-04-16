@@ -38,7 +38,7 @@
     "guarantee": "7-day satisfaction guarantee on move-out cleaning."
   },
   "home": {
-    "title": "Home Cleaning Service",
+    "title": "Härlig Städ AB",
     "subtitle": "Professional cleaning solutions for your home and business. Trustworthy, flexible, easy.",
     "hero": {
       "title": "Welcome home to a freshly cleaned home.",
@@ -73,10 +73,10 @@
     "testimonialTitle": "What our customers say",
     "testimonial1Quote": "Always professional treatment from everyone. The cleaning result is superb.",
     "testimonial1Author": "Sara",
-    "testimonial1Location": "Stockholm",
+    "testimonial1Location": "Växjö",
     "testimonial2Quote": "Flexible, reliable, and easy to work with. Our office has never looked better.",
     "testimonial2Author": "Marcus",
-    "testimonial2Location": "Gothenburg",
+    "testimonial2Location": "Växjö",
     "ctaSectionTitle": "Ready for a cleaner home?",
     "ctaSectionSubtitle": "Book your cleaning service today — or get in touch for a free quote. We're here to help.",
     "ctaSectionPhone": "Call us",
@@ -106,8 +106,8 @@
     "title": "Our Services",
     "subtitle": "Professional cleaning services for homes and businesses across Sweden.",
     "homeCleaning": {
-      "name": "Regular Home Cleaning",
-      "description": "Ongoing maintenance cleaning for those who want to come home to spotless results."
+      "name": "Home Cleaning",
+      "description": "For a happier home. Let us take care of the cleaning so you can focus on life."
     },
     "deepCleaning": {
       "name": "Deep Cleaning",
@@ -115,15 +115,15 @@
     },
     "windowCleaning": {
       "name": "Window Cleaning",
-      "description": "Crystal-clear windows, one-time or on a regular schedule."
+      "description": "Let the light into your home with professional window cleaning."
     },
     "moveOutCleaning": {
       "name": "Move-Out Cleaning",
-      "description": "Professional cleaning that meets inspection standards for a smoother move."
+      "description": "A simple and secure move. We make sure your old home is spotlessly clean."
     },
     "officeCleaning": {
       "name": "Office Cleaning",
-      "description": "Keep your office clean, welcoming, and always ready to impress."
+      "description": "For a happier office. Professional cleaning tailored to your business."
     }
   },
   "serviceDetail": {
@@ -134,18 +134,47 @@
     "relatedServices": "Other services you might like",
     "preparation": "How to prepare",
     "notIncluded": "Not included",
+    "whyChooseUsTitle": "Why choose us?",
+    "howItWorksTitle": "How it works",
+    "customerChecklistTitle": "Before your move-out cleaning – Checklist",
+    "promiseTitle": "Our promise to you",
+    "rutTitle": "RUT tax deduction",
+    "downloadChecklist": "Download checklist as PDF",
+    "includesSectionAllRooms": "All rooms",
+    "includesSectionKitchen": "Kitchen",
+    "includesSectionBathroom": "Bathroom",
+    "includesSectionLaundry": "Laundry & Utility Room",
+    "includesSectionWindows": "Windows",
     "homeCleaning": {
-      "intro": "Regular home cleaning for those who want to come home to spotless results — without thinking about it. Our professional cleaners take care of everything while you focus on what matters most.",
-      "includes": [
-        "All rooms: vacuuming carpets, floors and baseboards",
-        "Spot cleaning of switches, door frames, doors and handles",
-        "Polishing mirrors",
-        "Emptying bins (combustible and compostable)",
-        "Dusting frames and lamps",
-        "Mopping and spot cleaning floors",
-        "Kitchen: wiping fridge/freezer exterior, countertops, sink, stove, oven, microwave, handles",
-        "Bathroom: cleaning bathtub/shower, sink inside and out, toilet, towel rack, floor drain"
+      "intro": "Do you long for more time for what really matters? Let Härlig Städ AB take care of the cleaning so you can focus on life. We create order and harmony with a personal touch – for a happier home.\n\nComing home to a freshly cleaned house is one of life's greatest everyday luxuries. The scent of freshly scrubbed floors, the gleaming surfaces in the bathroom, and the peace of mind that comes when you don't have to think about vacuuming and dishes. At Härlig Städ AB, we know that a clean home isn't just about hygiene – it's about well-being, harmony, and more quality time with family and friends.",
+      "whyChooseUs": [
+        { "title": "Personal service", "desc": "We strive to send the same cleaner to your home every time. This builds trust and a cleaning routine tailored exactly to your needs." },
+        { "title": "Trust & Quality", "desc": "We are a serious cleaning company with trained staff, fair conditions, and liability insurance. You can feel completely secure when you hand over your keys to us." },
+        { "title": "Sustainable choices", "desc": "We care about both your home environment and nature. That's why we use eco-friendly cleaning methods and gentle products." },
+        { "title": "No commitment period", "desc": "We want you to stay with us because you're satisfied, not because you're locked into a contract. With us, you always have full flexibility." }
       ],
+      "includesAllRooms": [
+        "Vacuuming floors, carpets, and baseboards",
+        "Damp mopping of floors",
+        "Dusting all free surfaces",
+        "Spot cleaning doors, frames, and light switches"
+      ],
+      "includesKitchen": [
+        "Cleaning sink and stove",
+        "Exterior wiping of exhaust fan, fridge, and freezer",
+        "Cleaning microwave (inside and out)"
+      ],
+      "includesBathroom": [
+        "Cleaning sink, toilet, and bathtub",
+        "Polishing mirrors and faucets",
+        "Wiping walls where needed"
+      ],
+      "howItWorks": [
+        { "title": "Free consultation", "desc": "We start with a visit (or phone call) where we go through your home and what you need help with." },
+        { "title": "Tailored schedule", "desc": "You choose how often we come – every week, every other week, or every four weeks." },
+        { "title": "Enjoy your happier home", "desc": "We take care of the rest. You receive the invoice after the work is done, with the 50% RUT deduction already applied." }
+      ],
+      "rutSection": "As a private individual, you only pay half the labour cost directly on the invoice. We handle all the administration with the Swedish Tax Agency for you. It has never been more affordable to get help at home!",
       "pricing": "From 299 kr/hour (before RUT deduction)"
     },
     "deepCleaning": {
@@ -160,109 +189,94 @@
       "pricing": "From 399 kr/hour (before RUT deduction)"
     },
     "windowCleaning": {
-      "intro": "Crystal-clear windows for private homes, apartments, and businesses. We offer both one-time cleaning and subscription plans. After your first session, we'll send a subscription pricing proposal tailored to your home.",
+      "intro": "Few things make as big a difference for cosiness at home as freshly cleaned windows. With Härlig Städ AB's professional window cleaning, you get a clearer view and a brighter room – a simple path to a happier home.\n\nMany people put off cleaning their windows. It requires the right technique, the right equipment, and often a great deal of time and patience. Why not let our experts handle the job? We clean everything from small mullioned windows to large glazed balconies and tall sections, always with a streak-free and sparkling result.",
+      "whyChooseUs": [
+        { "title": "Streak-free results", "desc": "We use professional tools and techniques that leave your windows perfectly clean, without streaks or smudges." },
+        { "title": "We see the whole picture", "desc": "We naturally wipe down window frames and sills so the entire window area looks like new." },
+        { "title": "Safety first", "desc": "We are experienced working on ladders and with special equipment, so you don't have to balance at dangerous heights." },
+        { "title": "Flexible & Easy", "desc": "Book window cleaning as a one-time service before spring, or combine it with your regular home cleaning." }
+      ],
       "includes": [
-        "Interior and exterior window glass",
-        "Window frames and sills",
-        "Spröjs and multi-pane windows (additional cost may apply)",
-        "Flexible date option available (100 kr discount)",
-        "All cleaning materials provided"
+        "All sides cleaned: We clean all sides of the window (2-pane or 4-sided for triple-glazed) unless otherwise agreed.",
+        "Frame cleaning: We wipe down window frames and sills to remove dirt and cobwebs.",
+        "Glazed areas: We also clean glazed balconies and conservatories, which often require extra care.",
+        "Materials included: We bring all materials and eco-friendly cleaning products needed."
       ],
-      "preparation": [
-        "Move bulky furniture away from windows",
-        "Take down curtains",
-        "Clear objects and flowers from windowsills",
-        "Have keys ready for any window locks"
+      "howItWorks": [
+        { "title": "Quote", "desc": "Contact us and tell us how many windows you have (and whether they are reversible, have mullions, or if you have a glazed balcony)." },
+        { "title": "Cleaning", "desc": "We arrive at the scheduled time. You just need to make sure the windows are easily accessible (please move flowers and curtains before we arrive)." },
+        { "title": "Enjoy the view", "desc": "We leave your home brighter than when we arrived. You pay conveniently by invoice with a 50% RUT deduction." }
       ],
+      "rutSection": "Window cleaning qualifies as a household service, which means you as a private individual get a 50% discount on the labour cost. We handle all contact with the Swedish Tax Agency and the deduction is applied directly to your invoice.",
+      "tip": "Book your window cleaning before the first rays of spring sunshine or before the Advent candlesticks go up – it makes an enormous difference to the feeling in the room!",
       "pricing": "From 75 kr/window — get a quote for your home"
     },
     "moveOutCleaning": {
-      "intro": "Professional move-out cleaning that meets inspection standards for a smoother move. We know how important it is that both seller and buyer are satisfied. Our 7-day guarantee means you can feel secure — if anything needs fixing, we'll come back at no extra cost.",
+      "intro": "When the moving truck has left, your energy is often spent. Let Härlig Städ AB take care of the last, heavy part. We make sure your old home is spotlessly clean for the next owner, so you can focus entirely on your new chapter.",
+      "whyChooseUs": [
+        { "title": "Window cleaning always included", "desc": "We clean all sides of the window panes as standard." },
+        { "title": "7-day cleaning guarantee", "desc": "We clean until it's approved. If anything is noted during the inspection, we fix it immediately." },
+        { "title": "All materials included", "desc": "We bring all machines and eco-friendly cleaning products." },
+        { "title": "Safe & Insured", "desc": "Your home is in safe hands. We carry liability insurance and work with a focus on quality." },
+        { "title": "RUT tax deduction", "desc": "You only pay 50% of the labour cost directly on the invoice." }
+      ],
+      "includesIntro": "We follow the industry standard for move-out cleaning to guarantee a result approved by landlords and estate agents.",
       "includesAllRooms": [
-        "Power outlets, switches, and fuse box",
-        "Doors and door frames",
-        "Radiators",
-        "Floors and baseboards",
-        "Thresholds",
-        "Wardrobes and closets"
-      ],
-      "includesBathroom": [
-        "Fixed lighting",
-        "Bathroom cabinets",
-        "Visible pipes",
-        "Mirrors",
-        "Bathtub and shower cabin",
-        "Toilet",
-        "Sink",
-        "Floor drains",
-        "Descaling tiles and clinker",
-        "Ventilation — inside and out where accessible",
-        "Washing machine and tumble dryer"
-      ],
-      "includesLaundry": [
-        "Dust walls and ceiling",
-        "Clean washing machine and detergent compartment",
-        "Clean tumble dryer and filter",
-        "Clean drying cabinet and filter",
-        "Clean laundry sink",
-        "Clean storage areas",
-        "Clean floor drain and ventilation",
-        "Clean floor, doors and handles"
+        "Vacuuming and wet wiping of floors",
+        "Cleaning all sides of windows, plus wiping frames and sills",
+        "Wiping doors, frames, door handles, power outlets, and light switches",
+        "Cleaning radiators (including behind them)",
+        "Inside and outside wiping of wardrobes, cabinets, and drawers",
+        "Dusting walls and polishing mirrors"
       ],
       "includesKitchen": [
-        "Fixed lighting",
-        "Stove, oven, trays and grates",
-        "Microwave",
-        "Fridge and freezer",
-        "Cabinets, drawers and doors",
-        "Countertops",
-        "Kitchen exhaust fan",
-        "Dishwasher"
+        "Stove & Oven: Thorough cleaning of oven, grates, and trays. We also clean behind the stove if pulled out.",
+        "Fridge & Freezer: Cleaning inside and out, including underneath (freezer must be defrosted).",
+        "Exhaust fan: Cleaning of fan and filter (not carbon filters).",
+        "Dishwasher: Cleaning inside and out, including the filter.",
+        "Surfaces: Wiping tiles, countertops, and cabinet fronts. Polishing sink and mixer tap."
       ],
-      "includesWindows": [
-        "Window cleaning (interior)",
-        "Windowsills",
-        "Window frames"
+      "includesBathroom": [
+        "Sanitary: Cleaning toilet, sink, faucets, and shower/bathtub.",
+        "Floor drain: Cleaning of floor drain (interior).",
+        "Appliances: Exterior cleaning of washing machine and tumble dryer, plus lint filter cleaning."
       ],
-      "notIncluded": [
-        "Blinds and curtains",
-        "Removal of tape, stickers, etc.",
-        "Dismantling radiators",
-        "Washing walls",
-        "Balcony, patio, conservatory, garage, and storage (quoted separately)"
+      "customerChecklist": [
+        { "title": "Empty the home completely", "desc": "The home must be empty of furniture and personal belongings. If furniture remains, we only clean the surfaces we can reach, and we do not move heavy objects for workplace safety reasons." },
+        { "title": "Electricity and water", "desc": "Make sure there is access to both electricity and hot water in the home. Without lighting and hot water, we cannot guarantee a satisfactory result, especially during the winter months." },
+        { "title": "Fridge and freezer", "desc": "If you have booked cleaning of the fridge and freezer, these must be emptied and defrosted before cleaning begins. Remember to leave the doors open after defrosting so they have time to dry." },
+        { "title": "Pull out appliances", "desc": "If you want us to clean behind the stove, fridge, freezer, or washing machine, you need to pull these out yourself. We do not move machines due to the risk of damage to floors or pipe connections." },
+        { "title": "Existing damage", "desc": "Please inform us in advance if there is existing damage in the home, such as scratched windows, broken outlets, or stains on walls that cannot be washed off." },
+        { "title": "Key handling", "desc": "Agree with us in good time on how we get access to the home. You can either meet us on site or leave keys at our office by arrangement." }
       ],
-      "preparation": [
-        "Home must be empty of belongings",
-        "Pull out appliances if cleaning behind them",
-        "Remove and replace grilles above/below fridge and freezer",
-        "Remove and replace bathtub front panel",
-        "Provide access to additional spaces (e.g. storage rooms)",
-        "Defrost the freezer"
-      ],
-      "rutExplainer": "As a private individual, you are entitled to RUT deduction on your cleaning services, including move-out cleaning. This means a 50% tax reduction that lowers your cost. We handle the RUT application automatically when you book — no extra steps for you.",
+      "promise": "Once you've checked off the list, we take over! We bring all materials, all machines, and our expertise to make your old home \"härlig\" (lovely) again.",
       "includes": [
         "Complete checklist: all rooms, bathroom, kitchen",
-        "Windows (interior)",
+        "Window cleaning (all sides) included",
         "Inside cabinets and appliances",
         "RUT tax deduction applies",
-        "7-day satisfaction guarantee"
+        "7-day cleaning guarantee"
       ],
       "pricing": "From 3 500 kr for a standard apartment (before RUT)"
     },
     "officeCleaning": {
-      "intro": "We help keep your office clean, welcoming, and always ready to impress both clients and staff. Flexible schedules adapted to your business hours.",
-      "includes": [
-        "Desks and workstations",
-        "Common areas and meeting rooms",
-        "Restrooms",
-        "Kitchen/break room",
-        "Customizable frequency and schedule"
+      "intro": "A clean and fresh workplace is the foundation of a good working environment. With Härlig Städ AB's professional office cleaning, we create the conditions for creativity, focus, and well-being. We take care of the cleaning – so you can focus on your business.\n\nAt Härlig Städ AB, we know that the office is more than just a workplace; it's a face towards customers and a safe haven for your employees. By investing in regular office cleaning, you reduce sick leave, increase well-being, and make a professional first impression. Our goal is simple: We want to contribute to a happier and more productive working life.",
+      "whyChooseUs": [
+        { "title": "Tailored solutions", "desc": "Every office is unique. We create a cleaning schedule that fits your premises and working hours – whether you need cleaning every day or once a week." },
+        { "title": "Trust & Continuity", "desc": "We strive to have the same staff clean for you every time. This creates trust and a cleaner who gets to know your routines and preferences." },
+        { "title": "Sustainability in focus", "desc": "We use eco-labelled cleaning products and methods that are gentle on both the environment and those who spend time in the premises." },
+        { "title": "Collective agreement & Insurance", "desc": "As our customer, you can rest assured that our staff have fair conditions and that we have full insurance in case anything unexpected happens." }
+      ],
+      "howItWorks": [
+        { "title": "Needs assessment", "desc": "We make a free visit to your premises to understand your specific needs." },
+        { "title": "Quote & Plan", "desc": "We present a tailored quote with a fixed price per month or hour." },
+        { "title": "Ongoing follow-up", "desc": "We maintain a close dialogue to ensure you are always satisfied with the result." }
       ],
       "pricing": "Custom pricing — contact us for a tailored quote"
     }
   },
   "about": {
-    "title": "About Home Cleaning Service",
+    "title": "About Härlig Städ AB",
     "intro": "For nearly 30 years, we have offered first-class home services. Every day, we leverage that experience to meet, and exceed, our customers' expectations.",
     "storyTitle": "Our story",
     "storyP1": "What started as a small family business has grown into one of the most trusted cleaning service providers in Sweden. Our passion for cleanliness and customer care drives everything we do.",
@@ -361,7 +375,7 @@
     "hoursWeekend": "Sat: 09:00–15:00",
     "hoursSunday": "Sun: Closed",
     "areaTitle": "Service area",
-    "areaDesc": "We serve Stockholm and surrounding areas. Contact us to check availability in your area."
+    "areaDesc": "We serve Växjö and surrounding areas. Contact us to check availability in your area."
   },
   "privacy": {
     "title": "Privacy Policy",

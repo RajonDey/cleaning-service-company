@@ -106,12 +106,15 @@ export default async function ContactPage() {
                 </div>
               </div>
 
-              {/* Service area */}
+              {/* Address & Service area */}
               <div className="rounded-card border border-border bg-background-muted p-5">
                 <div className="flex items-center gap-2 mb-3">
                   <MapPin className="h-5 w-5 text-primary" />
                   <h3 className="font-heading text-base font-semibold text-foreground">{t("areaTitle")}</h3>
                 </div>
+                <p className="text-sm font-medium text-foreground mb-2">
+                  {siteConfig.contact.address}
+                </p>
                 <p className="text-sm text-foreground-muted">
                   {t("areaDesc")}
                 </p>

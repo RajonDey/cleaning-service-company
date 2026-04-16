@@ -5,28 +5,29 @@
 
 export const siteConfig = {
   /** Site name used in header, footer, and SEO */
-  siteName: "Home Cleaning Service",
+  siteName: "Härlig Städ AB",
 
   /** Base URL for canonical links and Open Graph (no trailing slash) */
   baseUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://homecleaningservice.se",
 
   /** Default meta when page-specific values are not set */
-  defaultTitle: "Home Cleaning Service | Professional Cleaning Services",
+  defaultTitle: "Härlig Städ AB | Professional Cleaning Services",
   defaultDescription:
     "Professional cleaning services for homes and businesses. Trustworthy, flexible, easy. Home cleaning, deep cleaning, window cleaning, move-out and office cleaning.",
 
-  /** Contact details (update for production) */
+  /** Contact details */
   contact: {
-    phone: "+46 00 000 00 00",
-    phoneHref: "tel:+46000000000",
-    email: "info@homecleaningservice.se",
-    whatsapp: "https://wa.me/46000000000",
+    phone: "0470-597 015",
+    phoneHref: "tel:+46470597015",
+    email: "info@harligstad.se",
+    whatsapp: "https://wa.me/46470597015",
+    address: "Plogvägen 107, 352 53 Växjö",
   },
 
   /** Per-page SEO overrides. Title is combined with siteName when needed. */
   seo: {
     home: {
-      title: "Home Cleaning Service | Professional Cleaning Services",
+      title: "Härlig Städ AB | Professional Cleaning Services",
       description:
         "Professional cleaning services for homes and businesses. Trustworthy, flexible, easy. Home cleaning, deep cleaning, window cleaning, move-out and office cleaning.",
     },
@@ -57,7 +58,7 @@ export const siteConfig = {
     },
     /** Used for service detail pages — {serviceName} is replaced */
     serviceDetail: {
-      titleTemplate: "{serviceName} | Home Cleaning Service",
+      titleTemplate: "{serviceName} | Härlig Städ AB",
       descriptionTemplate:
         "{serviceName} — professional cleaning service. Trustworthy, flexible, easy. Book online or contact us.",
     },

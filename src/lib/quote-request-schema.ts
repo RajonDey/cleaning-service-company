@@ -24,7 +24,7 @@ export const quoteRequestSchema = z
       return val;
     }, z.number().positive().max(100_000).optional()),
     city: z.string().min(1, "City is required").max(200),
-    phone: z.string().min(1, "Phone is required"),
+    phone: z.string().optional(),
     email: z.string().email("Invalid email"),
     marketingConsent: z.boolean().refine((v) => v === true, {
       message: "Consent is required",

@@ -38,7 +38,7 @@
     "guarantee": "7 dagars nöjd-garanti på flyttstädning."
   },
   "home": {
-    "title": "Home Cleaning Service",
+    "title": "Härlig Städ AB",
     "subtitle": "Professionella städtjänster för hem och företag. Pålitligt, flexibelt, enkelt.",
     "hero": {
       "title": "Välkommen hem till ett fräscht städat hem.",
@@ -73,10 +73,10 @@
     "testimonialTitle": "Vad våra kunder säger",
     "testimonial1Quote": "Alltid professionellt bemötande av alla. Städresultatet är superbra.",
     "testimonial1Author": "Sara",
-    "testimonial1Location": "Stockholm",
+    "testimonial1Location": "Växjö",
     "testimonial2Quote": "Flexibla, pålitliga och enkla att jobba med. Vårt kontor har aldrig sett bättre ut.",
     "testimonial2Author": "Marcus",
-    "testimonial2Location": "Göteborg",
+    "testimonial2Location": "Växjö",
     "ctaSectionTitle": "Redo för ett renare hem?",
     "ctaSectionSubtitle": "Boka din städtjänst idag — eller kontakta oss för en gratis offert. Vi finns här för dig.",
     "ctaSectionPhone": "Ring oss",
@@ -107,7 +107,7 @@
     "subtitle": "Professionella städtjänster för hem och företag i hela Sverige.",
     "homeCleaning": {
       "name": "Hemstädning",
-      "description": "Löpande underhållsstädning för dig som vill komma hem till skinande rent."
+      "description": "För ett lyckligare hem. Låt oss ta hand om städningen så kan du fokusera på livet."
     },
     "deepCleaning": {
       "name": "Storstädning",
@@ -115,15 +115,15 @@
     },
     "windowCleaning": {
       "name": "Fönsterputs",
-      "description": "Kristallklara fönster, engångstjänst eller regelbunden schemaläggning."
+      "description": "Släpp in ljuset i ditt hem med professionell fönsterputsning."
     },
     "moveOutCleaning": {
       "name": "Flyttstädning",
-      "description": "Professionell städning som uppfyller besiktningskrav för en smidigare flytt."
+      "description": "En enkel och trygg flytt. Vi ser till att din gamla bostad blir skinande ren."
     },
     "officeCleaning": {
       "name": "Kontorsstädning",
-      "description": "Håll kontoret rent, välkomnande och alltid redo att imponera."
+      "description": "För ett lyckligare kontor. Professionell städning anpassad efter er verksamhet."
     }
   },
   "serviceDetail": {
@@ -134,18 +134,47 @@
     "relatedServices": "Andra tjänster du kanske gillar",
     "preparation": "Förberedelser",
     "notIncluded": "Ingår ej",
+    "whyChooseUsTitle": "Varför välja oss?",
+    "howItWorksTitle": "Så fungerar det",
+    "customerChecklistTitle": "Inför din flyttstädning – Checklista",
+    "promiseTitle": "Vårt löfte till dig",
+    "rutTitle": "RUT-avdrag",
+    "downloadChecklist": "Ladda ner checklista som PDF",
+    "includesSectionAllRooms": "Generellt i alla rum",
+    "includesSectionKitchen": "Kök",
+    "includesSectionBathroom": "Badrum",
+    "includesSectionLaundry": "Tvättstuga",
+    "includesSectionWindows": "Fönster",
     "homeCleaning": {
-      "intro": "Hemstädning på dina villkor — för dig som vill komma hem till skinande rent utan att tänka på det. Våra professionella städare tar hand om allt medan du fokuserar på det som betyder mest.",
-      "includes": [
-        "Alla rum: dammsugning av mattor, golv och golvlister",
-        "Avfläckning av luckor, kontakter, lampknappar, foder, lister, dörrar och dörrhandtag",
-        "Putsning av speglar",
-        "Tömning av papperskorgar (brännbart och komposterbart)",
-        "Damning av tavelramar och lampor",
-        "Avfläckning och moppning av golv",
-        "Kök: avtorkning av kyl/frys utvändigt, arbetsbänk, diskho, kran, spis, ugn, micro",
-        "Badrum: rengöring av badkar/dusch, handfat, toalett, golvbrunn, hängare"
+      "intro": "Längtar du efter mer tid till det som verkligen betyder något? Låt Härlig Städ AB ta hand om städningen, så kan du fokusera på livet. Vi skapar ordning och reda med en personlig touch – för ett lyckligare hem.\n\nAtt komma hem till ett nystädat hus är en av vardagens största lyxmoment. Doften av nyskurat golv, de spegelblanka ytorna i badrummet och lugnet som infinner sig när du slipper tänka på dammsugning och disk. På Härlig Städ AB vet vi att ett rent hem inte bara handlar om hygien – det handlar om välmående, harmoni och mer kvalitetstid med familj och vänner.",
+      "whyChooseUs": [
+        { "title": "Personlig service", "desc": "Vi strävar efter att det är samma städare som kommer till dig varje gång. Det skapar trygghet och en städning som är anpassad exakt efter dina behov." },
+        { "title": "Trygghet & Kvalitet", "desc": "Vi är ett seriöst städföretag med utbildad personal, schyssta villkor och ansvarsförsäkring. Du kan känna dig helt trygg när du lämnar över nycklarna till oss." },
+        { "title": "Hållbara val", "desc": "Vi värnar om både din hemmiljö och vår natur. Därför använder vi miljövänliga rengöringsmetoder och skonsamma produkter." },
+        { "title": "Ingen bindningstid", "desc": "Vi vill att du ska stanna hos oss för att du är nöjd, inte för att du sitter fast i ett kontrakt. Hos oss har du alltid full flexibilitet." }
       ],
+      "includesAllRooms": [
+        "Dammsugning av golv, mattor och lister",
+        "Fuktmoppning av golv",
+        "Dammtorkning av alla fria ytor",
+        "Avfläckning av dörrar, karmar och strömbrytare"
+      ],
+      "includesKitchen": [
+        "Rengöring av diskbänk, spis",
+        "Utvändig avtorkning av fläkt, kyl och frys",
+        "Rengöring av mikrovågsugn (in- och utvändigt)"
+      ],
+      "includesBathroom": [
+        "Rengöring av handfat, toalett och badkar",
+        "Putsning av speglar och kranar",
+        "Avtorkning av väggar där det behövs"
+      ],
+      "howItWorks": [
+        { "title": "Kostnadsfritt möte", "desc": "Vi börjar med ett besök (eller telefonsamtal) där vi går igenom ditt hem och vad du vill ha hjälp med." },
+        { "title": "Skräddarsytt schema", "desc": "Du väljer hur ofta vi ska komma – varje vecka, varannan vecka eller var fjärde." },
+        { "title": "Njut av ditt lyckligare hem", "desc": "Vi sköter resten. Du får fakturan efter utfört arbete, där vi redan har dragit av 50 % för RUT-avdraget." }
+      ],
+      "rutSection": "Som privatperson betalar du bara hälften av arbetskostnaden direkt på fakturan. Vi sköter all administration med Skatteverket åt dig. Det har aldrig varit mer prisvärt att få hjälp i hemmet!",
       "pricing": "Från 299 kr/timme (före RUT-avdrag)"
     },
     "deepCleaning": {
@@ -160,107 +189,94 @@
       "pricing": "Från 399 kr/timme (före RUT-avdrag)"
     },
     "windowCleaning": {
-      "intro": "Kristallklara fönster för privatpersoner i villa eller lägenhet, samt företag. Vi erbjuder både engångsputsning och abonnemang. Efter din första putsning får du ett prisförslag på abonnemang.",
+      "intro": "Det finns få saker som gör så stor skillnad för hemtrevnaden som nyputsade fönster. Med Härlig Städ AB:s professionella fönsterputsning får du en klarare vy och ett ljusare rum – en enkel väg till ett lyckligare hem.\n\nMånga drar sig för att putsa fönster. Det kräver rätt teknik, rätt utrustning och ofta en hel del tid och tålamod. Varför inte låta våra experter sköta jobbet? Vi putsar allt från små spröjsade fönster till stora inglasade balkonger och höga partier, alltid med ett ränderfritt och skinande resultat.",
+      "whyChooseUs": [
+        { "title": "Ränderfritt resultat", "desc": "Vi använder professionella redskap och tekniker som gör att dina fönster blir helt rena, utan ränder eller flammighet." },
+        { "title": "Vi ser helheten", "desc": "Vi torkar självklart av fönsterkarmar och bleck så att hela fönsterpartiet ser ut som nytt." },
+        { "title": "Säkerheten först", "desc": "Vi har vana av att arbeta på stege och med specialredskap, så att du slipper balansera på farliga höjder." },
+        { "title": "Flexibelt & Enkelt", "desc": "Boka fönsterputs som en engångstjänst inför våren, eller kombinera det med din regelbundna hemstädning." }
+      ],
       "includes": [
-        "In- och utvändiga fönster",
-        "Karmar och fönsterbrädor",
-        "Spröjs och flerfönster (extra kostnad kan tillkomma)",
-        "Flexibelt datum ger rabatt (100 kr)",
-        "Alla rengöringsmaterial ingår"
+        "Putsning av alla sidor: Vi putsar fönstrets alla sidor (2-glas eller 4-sidigt för 3-glas) såvida inget annat avtalats.",
+        "Rengöring av karmar: Vi torkar av fönsterkarmar och fönsterbräden från smuts och spindelväv.",
+        "Inglasningar: Vi putsar även inglasade balkonger och uterum, vilket ofta kräver extra noggrannhet.",
+        "Material ingår: Vi tar med oss allt material och de miljövänliga rengöringsmedel som behövs."
       ],
-      "preparation": [
-        "Flytta skrymmande möbler från fönstren",
-        "Ta ner gardiner",
-        "Plocka bort blommor och föremål från fönsterbrädor",
-        "Lägg fram nycklar för fönsterlås"
+      "howItWorks": [
+        { "title": "Prisförslag", "desc": "Kontakta oss och berätta hur många fönster du har (och om de är vändbara, har spröjs eller om du har en inglasad balkong)." },
+        { "title": "Putsning", "desc": "Vi kommer på utsatt tid. Du behöver bara se till att fönstren är lättåtkomliga (flytta gärna på blommor och gardiner innan vi kommer)." },
+        { "title": "Njut av utsikten", "desc": "Vi lämnar ditt hem ljusare än när vi kom. Du betalar smidigt via faktura med 50 % RUT-avdrag." }
       ],
+      "rutSection": "Fönsterputsning räknas som hushållsnära tjänst, vilket innebär att du som privatperson får 50 % rabatt på arbetskostnaden. Vi sköter all kontakt med Skatteverket och avdraget görs direkt på din faktura.",
+      "tip": "Passa på att boka fönsterputsning inför vårens första solstrålar eller innan adventsljusstakarna ska upp – det gör en enorm skillnad för känslan i rummet!",
       "pricing": "Från 75 kr/fönster — få en offert för ditt hem"
     },
     "moveOutCleaning": {
-      "intro": "Vi har 7 dagars nöjd-garanti som gäller alla flyttstädtjänster. Vi vet hur viktigt det är att inte bara du som beställare blir nöjd utan även köparen. Du som säljare slipper oroa dig, och som köpare kan du känna dig trygg med att städningen är ordentligt utförd.",
+      "intro": "När flyttlasset har gått är energin ofta slut. Låt Härlig Städ AB ta hand om den sista, tunga biten. Vi ser till att din gamla bostad blir skinande ren för nästa ägare, så att du kan fokusera helt på ditt nya kapitel.",
+      "whyChooseUs": [
+        { "title": "Fönsterputs ingår alltid", "desc": "Vi putsar alla sidor av fönsterrutorna som standard." },
+        { "title": "7 dagars städgaranti", "desc": "Vi städar tills det är godkänt. Om något mot förmodan skulle anmärkas på vid besiktningen åtgärdar vi det direkt." },
+        { "title": "Allt material ingår", "desc": "Vi tar med oss alla maskiner och miljövänliga städprodukter." },
+        { "title": "Tryggt & Försäkrat", "desc": "Din bostad är i trygga händer. Vi är ansvarsförsäkrade och arbetar med fokus på kvalitet." },
+        { "title": "RUT-avdrag", "desc": "Du betalar endast 50 % av arbetskostnaden direkt på fakturan." }
+      ],
+      "includesIntro": "Vi följer branschstandarden för flyttstädning för att garantera ett resultat som godkänns av hyresvärdar och mäklare.",
       "includesAllRooms": [
-        "Eluttag, strömbrytare, elskåp",
-        "Dörrar och dörrkarmar",
-        "Element",
-        "Golv och golvlister",
-        "Trösklar",
-        "Garderober"
-      ],
-      "includesBathroom": [
-        "Fast belysning",
-        "Badrumsskåp",
-        "Synliga rör",
-        "Speglar",
-        "Badkar och duschkabin",
-        "Toalett och tvättställ",
-        "Golvbrunnar",
-        "Avkalkning och rengöring av kakel och klinkers",
-        "Ventiler — utvändigt och invändigt",
-        "Tvättmaskin och torktumlare"
-      ],
-      "includesLaundry": [
-        "Damma av väggar och tak",
-        "Rengör tvättmaskin och tvättmedelsfack",
-        "Rengör torktumlare och filter",
-        "Rengör torkskåp och filter",
-        "Rengör tvättho och förvaringsutrymmen",
-        "Rengör golvbrunn och ventilationsdon",
-        "Rengör golv, dörr, dörrkarm och handtag"
+        "Dammsugning och våttorkning av golv",
+        "Putsning av fönster (alla sidor) samt avtorkning av karmar och brädor",
+        "Avtorkning av dörrar, karmar, dörrhandtag, eluttag och strömbrytare",
+        "Rengöring av element (även bakom)",
+        "In- och utvändig avtorkning av garderober, skåp och lådor",
+        "Dammtorkning av väggar och putsning av speglar"
       ],
       "includesKitchen": [
-        "Fast belysning",
-        "Spis, ugn, plåtar och galler",
-        "Mikrovågsugn",
-        "Kyl och frys",
-        "Skåp, lådor och luckor",
-        "Arbetsbänkar",
-        "Köksfläkt",
-        "Diskmaskin"
+        "Spis & Ugn: Grundlig rengöring av ugn, galler och plåtar. Vi städar även bakom spisen om den dras fram.",
+        "Kyl & Frys: Rengöring in- och utvändigt samt under (frysen ska vara avfrostad).",
+        "Fläkt: Rengöring av fläkt och filter (ej kolfilter).",
+        "Diskmaskin: Rengöring in- och utvändigt samt av filter.",
+        "Ytor: Avtorkning av kakel, bänkskivor och skåpfronter. Putsning av diskho och blandare."
       ],
-      "includesWindows": [
-        "Fönsterputsning (invändig)",
-        "Fönsterbänkar",
-        "Fönsterkarmar"
+      "includesBathroom": [
+        "Sanitet: Rengöring av toalett, handfat, kranar och dusch/badkar.",
+        "Golvbrunn: Rengöring av golvbrunn (invändigt).",
+        "Vitvaror: Utvändig rengöring av tvättmaskin och torktumlare samt rengöring av luddfilter."
       ],
-      "notIncluded": [
-        "Persienner",
-        "Borttagning av tejp, klistermärken etc.",
-        "Monterar ej ner/isär element",
-        "Tvätt av väggar",
-        "Balkong, altan, uterum, garage och förråd (offereras separat)"
+      "customerChecklist": [
+        { "title": "Töm bostaden helt", "desc": "Bostaden ska vara tom på möbler och personliga tillhörigheter. Om det finns möbler kvar städar vi endast de ytor vi kommer åt, och vi flyttar inte på tunga föremål av arbetsmiljöskäl." },
+        { "title": "El och vatten", "desc": "Se till att det finns tillgång till både el och varmvatten i bostaden. Utan belysning och varmvatten kan vi inte garantera ett fullgott resultat, särskilt under vinterhalvåret." },
+        { "title": "Kyl och frys", "desc": "Om du har bokat rengöring av kyl och frys måste dessa vara tömda och avfrostade innan städningen påbörjas. Kom ihåg att lämna dörrarna öppna efter avfrostning så att de hinner torka." },
+        { "title": "Dra fram vitvaror", "desc": "Om du vill att vi ska städa bakom spis, kyl, frys eller tvättmaskin behöver du dra fram dessa själv. Vi drar inte fram maskiner på grund av risken för skador på golv eller röranslutningar." },
+        { "title": "Befintliga skador", "desc": "Informera oss gärna i förväg om det finns befintliga skador i bostaden, till exempel repiga fönster, trasiga eluttag eller fläckar på väggar som inte går att tvätta bort." },
+        { "title": "Nyckelhantering", "desc": "Kom överens med oss i god tid om hur vi får tillgång till bostaden. Du kan antingen möta oss på plats eller lämna in nycklar till vårt kontor enligt överenskommelse." }
       ],
-      "preparation": [
-        "Hemmet är tömt på bohag",
-        "Vitvaror ska vara framdragna om det ska städas bakom",
-        "Galler över/under kyl/frys plockas bort och sätts tillbaka",
-        "Badkarsfront plockas av och sätts tillbaka av kund",
-        "Ge oss tillgång till övriga utrymmen (t.ex. förråd)",
-        "Frysen ska vara avfrostad"
-      ],
-      "rutExplainer": "Som privatperson har du rätt till RUT-avdrag på dina städtjänster, inklusive flyttstädning. Det innebär 50% skattereduktion. Vi hanterar ansökan automatiskt vid bokning — inga extra steg för dig.",
+      "promise": "När du har bockat av listan tar vi över! Vi tar med oss allt material, alla maskiner och vår expertis för att göra din gamla bostad \"härlig\" igen.",
       "includes": [
-        "Komplett checklista: alla rum, badrum, kök",
-        "Fönster (invändiga)",
+        "Komplett momentlista: alla rum, badrum, kök",
+        "Fönsterputs (alla sidor) ingår",
         "Insidan av skåp och vitvaror",
         "RUT-avdrag gäller",
-        "7 dagars nöjd-garanti"
+        "7 dagars städgaranti"
       ],
       "pricing": "Från 3 500 kr för standardlägenhet (före RUT)"
     },
     "officeCleaning": {
-      "intro": "Vi hjälper till att hålla kontoret rent, välkomnande och alltid redo att imponera både kunder och personal. Flexibla scheman anpassade efter era arbetstider.",
-      "includes": [
-        "Skrivbord och arbetsplatser",
-        "Gemensamma utrymmen och mötesrum",
-        "Toaletter",
-        "Kök/pausrum",
-        "Anpassningsbar frekvens och schema"
+      "intro": "En ren och fräsch arbetsplats är grunden för en god arbetsmiljö. Med Härlig Städ AB:s professionella kontorsstädning skapar vi förutsättningar för kreativitet, fokus och trivsel. Vi tar hand om städningen – så att ni kan fokusera på er verksamhet.\n\nVi på Härlig Städ AB vet att kontoret är mer än bara en arbetsplats; det är ett ansikte utåt mot kunder och en trygg punkt för era medarbetare. Genom att investera i regelbunden kontorsstädning minskar ni sjukfrånvaron, ökar trivseln och ger ett professionellt första intryck. Vårt mål är enkelt: Vi vill bidra till ett lyckligare och mer produktivt arbetsliv.",
+      "whyChooseUs": [
+        { "title": "Skräddarsydda lösningar", "desc": "Varje kontor är unikt. Vi tar fram ett städschema som passar just era lokaler och arbetstider – oavsett om ni behöver städning varje dag eller en gång i veckan." },
+        { "title": "Trygghet & Kontinuitet", "desc": "Vi strävar efter att samma personal städar hos er varje gång. Det skapar en trygghet och en städare som lär känna era rutiner och önskemål." },
+        { "title": "Hållbarhet i fokus", "desc": "Vi använder miljömärkta rengöringsprodukter och metoder som är skonsamma för både miljön och de som vistas i lokalerna." },
+        { "title": "Kollektivavtal & Försäkring", "desc": "Som kund hos oss kan ni vara trygga med att vår personal har schyssta villkor och att vi har fullgoda försäkringar om något mot förmodan skulle hända." }
+      ],
+      "howItWorks": [
+        { "title": "Behovsanalys", "desc": "Vi gör ett kostnadsfritt besök i era lokaler för att förstå era specifika behov." },
+        { "title": "Offert & Plan", "desc": "Vi presenterar en skräddarsydd offert med ett fast pris per månad eller timme." },
+        { "title": "Löpande uppföljning", "desc": "Vi har en nära dialog för att säkerställa att ni alltid är nöjda med resultatet." }
       ],
       "pricing": "Anpassat pris — kontakta oss för en skräddarsydd offert"
     }
   },
   "about": {
-    "title": "Om Home Cleaning Service",
+    "title": "Om Härlig Städ AB",
     "intro": "I nästan 30 år har vi erbjudit förstklassiga hemtjänster. Varje dag använder vi den erfarenheten för att möta och överträffa våra kunders förväntningar.",
     "storyTitle": "Vår historia",
     "storyP1": "Det som började som ett litet familjeföretag har vuxit till en av Sveriges mest pålitliga städtjänstleverantörer. Vår passion för renlighet och kundvård driver allt vi gör.",
@@ -359,7 +375,7 @@
     "hoursWeekend": "Lör: 09:00–15:00",
     "hoursSunday": "Sön: Stängt",
     "areaTitle": "Serviceområde",
-    "areaDesc": "Vi betjänar Stockholm och omgivande områden. Kontakta oss för att kontrollera tillgänglighet i ditt område."
+    "areaDesc": "Vi betjänar Växjö och omgivande områden. Kontakta oss för att kontrollera tillgänglighet i ditt område."
   },
   "privacy": {
     "title": "Integritetspolicy",

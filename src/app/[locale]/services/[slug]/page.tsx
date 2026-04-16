@@ -2,11 +2,20 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { Link as IntlLink } from "@/i18n/routing";
-import { Check, AlertTriangle, ClipboardList, Info } from "lucide-react";
+import {
+  Check,
+  ClipboardList,
+  Info,
+  Star,
+  Lightbulb,
+  Phone,
+  Mail,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { ServiceCard } from "@/components/sections/service-card";
+import { DownloadChecklistButton } from "@/components/ui/download-checklist-button";
 import {
   SERVICE_CONFIG,
   SERVICE_SLUGS,
@@ -14,6 +23,7 @@ import {
   type ServiceSlug,
 } from "@/lib/services";
 import { buildMetadata } from "@/lib/metadata";
+import { siteConfig } from "@/config/site";
 
 type Props = {
   params: Promise<{ slug: string; locale: string }>;
@@ -35,11 +45,21 @@ export async function generateMetadata({ params }: Props) {
   });
 }
 
-function CheckList({ items, title, icon: Icon = Check }: { items: string[]; title?: string; icon?: typeof Check }) {
+function CheckList({
+  items,
+  title,
+  icon: Icon = Check,
+}: {
+  items: string[];
+  title?: string;
+  icon?: typeof Check;
+}) {
   return (
     <div>
       {title && (
-        <h3 className="mb-3 font-heading text-base font-semibold text-foreground">{title}</h3>
+        <h3 className="mb-3 font-heading text-base font-semibold text-foreground">
+          {title}
+        </h3>
       )}
       <ul className="space-y-2.5">
         {items.map((item, i) => (
@@ -53,8 +73,14 @@ function CheckList({ items, title, icon: Icon = Check }: { items: string[]; titl
   );
 }
 
+type StructuredItem = { title: string; desc: string };
+
+function safeArray<T>(raw: unknown): T[] {
+  return Array.isArray(raw) ? (raw as T[]) : [];
+}
+
 export default async function ServiceDetailPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
 
   if (!SERVICE_SLUGS.includes(slug as ServiceSlug)) {
     notFound();
@@ -65,54 +91,77 @@ export default async function ServiceDetailPage({ params }: Props) {
   const t = await getTranslations("services");
   const tDetail = await getTranslations("serviceDetail");
   const tCommon = await getTranslations("common");
+  const tNav = await getTranslations("nav");
 
   const serviceName = t(`${messageKey}.name`);
   const intro = tDetail(`${messageKey}.intro`);
-  const includesRaw = tDetail.raw(`${messageKey}.includes`);
-  const includesList = Array.isArray(includesRaw) ? includesRaw as string[] : [includesRaw as string];
   const pricing = tDetail(`${messageKey}.pricing`);
 
   const isMoveOut = currentSlug === "move-out-cleaning";
-  const isWindow = currentSlug === "window-cleaning";
   const isHome = currentSlug === "home-cleaning";
+  const hasSubSections = isMoveOut || isHome;
 
-  const hasPreparation = tDetail.has(`${messageKey}.preparation`);
-  const hasNotIncluded = isMoveOut && tDetail.has(`${messageKey}.notIncluded`);
-  const hasRutExplainer = isMoveOut && tDetail.has(`${messageKey}.rutExplainer`);
+  const hasWhyChooseUs = tDetail.has(`${messageKey}.whyChooseUs`);
+  const hasHowItWorks = tDetail.has(`${messageKey}.howItWorks`);
+  const hasRutSection = tDetail.has(`${messageKey}.rutSection`);
+  const hasTip = tDetail.has(`${messageKey}.tip`);
+  const hasCustomerChecklist =
+    isMoveOut && tDetail.has(`${messageKey}.customerChecklist`);
+  const hasPromise = isMoveOut && tDetail.has(`${messageKey}.promise`);
+  const hasIncludesIntro = tDetail.has(`${messageKey}.includesIntro`);
+  const hasIncludes = tDetail.has(`${messageKey}.includes`);
 
-  let preparationList: string[] = [];
-  if (hasPreparation) {
-    const raw = tDetail.raw(`${messageKey}.preparation`);
-    preparationList = Array.isArray(raw) ? raw as string[] : [];
-  }
+  const whyChooseUs: StructuredItem[] = hasWhyChooseUs
+    ? safeArray(tDetail.raw(`${messageKey}.whyChooseUs`))
+    : [];
 
-  let notIncludedList: string[] = [];
-  if (hasNotIncluded) {
-    const raw = tDetail.raw(`${messageKey}.notIncluded`);
-    notIncludedList = Array.isArray(raw) ? raw as string[] : [];
-  }
+  const howItWorks: StructuredItem[] = hasHowItWorks
+    ? safeArray(tDetail.raw(`${messageKey}.howItWorks`))
+    : [];
 
-  let moveOutSections: { title: string; items: string[] }[] = [];
-  if (isMoveOut) {
-    const sectionKeys = ["includesAllRooms", "includesBathroom", "includesLaundry", "includesKitchen", "includesWindows"] as const;
-    const sectionTitles: Record<string, string> = {
-      includesAllRooms: isHome ? "" : "All rooms",
-      includesBathroom: "Bathroom & Toilet",
-      includesLaundry: "Laundry & Utility Room",
-      includesKitchen: "Kitchen",
-      includesWindows: "Windows",
-    };
+  const customerChecklist: StructuredItem[] = hasCustomerChecklist
+    ? safeArray(tDetail.raw(`${messageKey}.customerChecklist`))
+    : [];
+
+  const includesList: string[] = hasIncludes
+    ? safeArray(tDetail.raw(`${messageKey}.includes`))
+    : [];
+
+  const sectionTitleKeys: Record<string, string> = {
+    includesAllRooms: "includesSectionAllRooms",
+    includesBathroom: "includesSectionBathroom",
+    includesLaundry: "includesSectionLaundry",
+    includesKitchen: "includesSectionKitchen",
+    includesWindows: "includesSectionWindows",
+  };
+
+  let roomSections: { title: string; items: string[] }[] = [];
+  if (hasSubSections) {
+    const sectionKeys = [
+      "includesAllRooms",
+      "includesBathroom",
+      "includesLaundry",
+      "includesKitchen",
+      "includesWindows",
+    ] as const;
     for (const key of sectionKeys) {
       if (tDetail.has(`${messageKey}.${key}`)) {
         const raw = tDetail.raw(`${messageKey}.${key}`);
         if (Array.isArray(raw)) {
-          moveOutSections.push({ title: sectionTitles[key], items: raw as string[] });
+          const titleKey = sectionTitleKeys[key];
+          roomSections.push({
+            title: tDetail.has(titleKey) ? tDetail(titleKey) : key,
+            items: raw as string[],
+          });
         }
       }
     }
   }
 
-  const relatedSlugs = SERVICE_SLUGS.filter((s) => s !== currentSlug).slice(0, 3);
+  const relatedSlugs = SERVICE_SLUGS.filter((s) => s !== currentSlug).slice(
+    0,
+    3
+  );
 
   return (
     <>
@@ -132,11 +181,17 @@ export default async function ServiceDetailPage({ params }: Props) {
               </div>
             )}
 
-            {/* Breadcrumb */}
-            <nav className="mb-6 text-sm text-foreground-muted" aria-label="Breadcrumb">
-              <IntlLink href="/" className="hover:text-primary">Home</IntlLink>
+            <nav
+              className="mb-6 text-sm text-foreground-muted"
+              aria-label="Breadcrumb"
+            >
+              <IntlLink href="/" className="hover:text-primary">
+                {tNav("home")}
+              </IntlLink>
               <span className="mx-2">/</span>
-              <IntlLink href="/services" className="hover:text-primary">Services</IntlLink>
+              <IntlLink href="/services" className="hover:text-primary">
+                {tNav("services")}
+              </IntlLink>
               <span className="mx-2">/</span>
               <span className="text-foreground">{serviceName}</span>
             </nav>
@@ -150,22 +205,60 @@ export default async function ServiceDetailPage({ params }: Props) {
               </h1>
             </div>
 
-            <p className="mb-10 text-lg leading-relaxed text-foreground-muted">
-              {intro}
-            </p>
+            <div className="mb-10 space-y-4 text-lg leading-relaxed text-foreground-muted">
+              {intro.split("\n\n").map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+            </div>
 
-            {/* RUT explainer for move-out */}
-            {hasRutExplainer && (
-              <div className="mb-10 flex gap-4 rounded-card border border-primary/20 bg-primary-light/30 p-6">
-                <Info className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                <p className="text-sm leading-relaxed text-foreground-muted">
-                  {tDetail(`${messageKey}.rutExplainer`)}
-                </p>
+            {/* Why choose us */}
+            {whyChooseUs.length > 0 && (
+              <div className="mb-10">
+                <h2 className="mb-6 font-heading text-xl font-semibold text-foreground">
+                  {tDetail("whyChooseUsTitle")}
+                </h2>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {whyChooseUs.map((item, i) => (
+                    <div
+                      key={i}
+                      className="rounded-card border border-border bg-background-muted p-5"
+                    >
+                      <div className="mb-2 flex items-center gap-2">
+                        <Star className="h-4.5 w-4.5 shrink-0 text-primary" />
+                        <h3 className="font-heading text-sm font-semibold text-foreground">
+                          {item.title}
+                        </h3>
+                      </div>
+                      <p className="text-sm leading-relaxed text-foreground-muted">
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 
-            {/* Includes — standard services */}
-            {!isMoveOut && (
+            {/* Includes intro (move-out) */}
+            {hasIncludesIntro && (
+              <p className="mb-4 text-sm font-medium text-foreground-muted">
+                {tDetail(`${messageKey}.includesIntro`)}
+              </p>
+            )}
+
+            {/* Includes — services with room sub-sections */}
+            {hasSubSections && roomSections.length > 0 && (
+              <div className="mb-10 space-y-6 rounded-card border border-border bg-background-muted p-6">
+                <h2 className="font-heading text-lg font-semibold text-foreground">
+                  {tDetail("whatsIncluded")}
+                </h2>
+                {roomSections.map(({ title, items }) => (
+                  <CheckList key={title} items={items} title={title} />
+                ))}
+              </div>
+            )}
+
+            {/* Includes — flat list for other services */}
+            {!hasSubSections && includesList.length > 0 && (
               <div className="mb-10 rounded-card border border-border bg-background-muted p-6">
                 <h2 className="mb-4 font-heading text-lg font-semibold text-foreground">
                   {tDetail("whatsIncluded")}
@@ -174,37 +267,106 @@ export default async function ServiceDetailPage({ params }: Props) {
               </div>
             )}
 
-            {/* Includes — move-out with room sections */}
-            {isMoveOut && moveOutSections.length > 0 && (
-              <div className="mb-10 space-y-6 rounded-card border border-border bg-background-muted p-6">
-                <h2 className="font-heading text-lg font-semibold text-foreground">
-                  {tDetail("whatsIncluded")}
+            {/* How it works */}
+            {howItWorks.length > 0 && (
+              <div className="mb-10">
+                <h2 className="mb-6 font-heading text-xl font-semibold text-foreground">
+                  {tDetail("howItWorksTitle")}
                 </h2>
-                {moveOutSections.map(({ title, items }) => (
-                  <CheckList key={title} items={items} title={title} />
-                ))}
+                <div className="space-y-4">
+                  {howItWorks.map((step, i) => (
+                    <div key={i} className="flex gap-4">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+                        {i + 1}
+                      </div>
+                      <div>
+                        <h3 className="font-heading text-sm font-semibold text-foreground">
+                          {step.title}
+                        </h3>
+                        <p className="mt-1 text-sm leading-relaxed text-foreground-muted">
+                          {step.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 
-            {/* Preparation */}
-            {preparationList.length > 0 && (
+            {/* Customer checklist (move-out) */}
+            {customerChecklist.length > 0 && (
               <div className="mb-10 rounded-card border border-secondary/20 bg-secondary/5 p-6">
-                <h2 className="mb-4 flex items-center gap-2 font-heading text-lg font-semibold text-foreground">
+                <h2 className="mb-6 flex items-center gap-2 font-heading text-lg font-semibold text-foreground">
                   <ClipboardList className="h-5 w-5 text-secondary" />
-                  {tDetail("preparation")}
+                  {tDetail("customerChecklistTitle")}
                 </h2>
-                <CheckList items={preparationList} icon={ClipboardList} />
+                <div className="space-y-5">
+                  {customerChecklist.map((item, i) => (
+                    <div key={i} className="flex gap-4">
+                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-secondary/20 text-xs font-bold text-secondary">
+                        {i + 1}
+                      </div>
+                      <div>
+                        <h3 className="font-heading text-sm font-semibold text-foreground">
+                          {item.title}
+                        </h3>
+                        <p className="mt-1 text-sm leading-relaxed text-foreground-muted">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 
-            {/* Not included */}
-            {notIncludedList.length > 0 && (
-              <div className="mb-10 rounded-card border border-border bg-background p-6">
-                <h2 className="mb-4 flex items-center gap-2 font-heading text-lg font-semibold text-foreground">
-                  <AlertTriangle className="h-5 w-5 text-warning" />
-                  {tDetail("notIncluded")}
-                </h2>
-                <CheckList items={notIncludedList} icon={AlertTriangle} />
+            {/* Promise (move-out) */}
+            {hasPromise && (
+              <div className="mb-10 flex gap-4 rounded-card border border-primary/20 bg-primary-light/30 p-6">
+                <Info className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <div>
+                  <h3 className="mb-2 font-heading text-sm font-semibold text-foreground">
+                    {tDetail("promiseTitle")}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-foreground-muted">
+                    {tDetail(`${messageKey}.promise`)}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* PDF download (move-out) */}
+            {isMoveOut && (
+              <div className="mb-10">
+                <DownloadChecklistButton locale={locale}>
+                  {tDetail("downloadChecklist")}
+                </DownloadChecklistButton>
+              </div>
+            )}
+
+            {/* RUT section */}
+            {hasRutSection && (
+              <div className="mb-10 flex gap-4 rounded-card border border-primary/20 bg-primary-light/30 p-6">
+                <Info className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <div>
+                  <h3 className="mb-2 font-heading text-sm font-semibold text-foreground">
+                    {tDetail("rutTitle")}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-foreground-muted">
+                    {tDetail(`${messageKey}.rutSection`)}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* Tip (window cleaning) */}
+            {hasTip && (
+              <div className="mb-10 flex gap-4 rounded-card border border-secondary/20 bg-secondary/5 p-6">
+                <Lightbulb className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />
+                <p className="text-sm leading-relaxed text-foreground-muted">
+                  <span className="font-semibold text-foreground">Tips: </span>
+                  {tDetail(`${messageKey}.tip`)}
+                </p>
               </div>
             )}
 
@@ -218,19 +380,37 @@ export default async function ServiceDetailPage({ params }: Props) {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4">
+            {/* CTA */}
+            <div className="flex flex-wrap items-center gap-4">
               <Button asChild size="lg">
                 <IntlLink href="/book">{tDetail("bookThisService")}</IntlLink>
               </Button>
               <Button asChild size="lg" variant="outline">
                 <IntlLink href="/contact">{tDetail("getQuote")}</IntlLink>
               </Button>
+              <a
+                href={siteConfig.contact.phoneHref}
+                className="flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-primary"
+              >
+                <Phone className="h-4 w-4" />
+                {siteConfig.contact.phone}
+              </a>
+              <a
+                href={`mailto:${siteConfig.contact.email}`}
+                className="flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-primary"
+              >
+                <Mail className="h-4 w-4" />
+                {siteConfig.contact.email}
+              </a>
             </div>
           </div>
         </Container>
       </Section>
 
-      <Section title={tDetail("relatedServices")} className="bg-background-muted">
+      <Section
+        title={tDetail("relatedServices")}
+        className="bg-background-muted"
+      >
         <Container>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {relatedSlugs.map((relSlug) => {

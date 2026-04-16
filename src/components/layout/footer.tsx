@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Phone, Mail, MessageCircle, Shield, BadgeCheck } from "lucide-react";
+import { Phone, Mail, MessageCircle, MapPin, Shield, BadgeCheck } from "lucide-react";
 import { Link as IntlLink } from "@/i18n/routing";
 import { Container } from "@/components/layout/container";
 import { cn } from "@/lib/utils";
@@ -127,6 +127,10 @@ export function Footer({ className }: { className?: string }) {
                 <MessageCircle className="h-4 w-4 shrink-0" />
                 WhatsApp
               </a>
+              <span className="flex items-center gap-2 text-sm">
+                <MapPin className="h-4 w-4 shrink-0" />
+                {siteConfig.contact.address}
+              </span>
             </div>
           </div>
         </div>
