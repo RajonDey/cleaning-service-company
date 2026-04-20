@@ -25,9 +25,9 @@ export async function POST(request: Request) {
 
     const apiKey = process.env.RESEND_API_KEY;
     const fromEmail = process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev";
-    const notifyEmail = process.env.BOOKING_NOTIFY_EMAIL;
+    const notifyEmails = process.env.BOOKING_NOTIFY_EMAIL?.split(",").map((e) => e.trim()).filter(Boolean);
 
-    if (!apiKey || !notifyEmail) {
+    if (!apiKey || !notifyEmails?.length) {
       return NextResponse.json(
         {
           error:
@@ -41,7 +41,7 @@ export async function POST(request: Request) {
 
     const { error } = await resend.emails.send({
       from: fromEmail,
-      to: notifyEmail,
+      to: notifyEmails,
       replyTo: email,
       subject: `Contact from ${name} - ${siteConfig.siteName}`,
       html: `

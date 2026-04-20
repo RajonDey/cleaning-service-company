@@ -16,9 +16,9 @@ const SERVICE_LABELS: Record<string, string> = {
 function getResend() {
   const apiKey = process.env.RESEND_API_KEY;
   const fromEmail = process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev";
-  const notifyEmail = process.env.BOOKING_NOTIFY_EMAIL;
+  const notifyEmails = process.env.BOOKING_NOTIFY_EMAIL?.split(",").map((e) => e.trim()).filter(Boolean);
   if (!apiKey) return null;
-  return { resend: new Resend(apiKey), fromEmail, notifyEmail };
+  return { resend: new Resend(apiKey), fromEmail, notifyEmails };
 }
 
 const WINDOW_SCOPE_LABEL: Record<string, string> = {
@@ -45,14 +45,14 @@ function buildWindowExtras(data: BookingFormData): string {
 
 async function sendOwnerNotification(data: BookingFormData) {
   const config = getResend();
-  if (!config || !config.notifyEmail) return;
+  if (!config?.notifyEmails?.length) return;
 
   const serviceName = SERVICE_LABELS[data.serviceType] ?? data.serviceType;
   const windowExtras = buildWindowExtras(data);
 
   await config.resend.emails.send({
     from: config.fromEmail,
-    to: config.notifyEmail,
+    to: config.notifyEmails,
     subject: `New booking: ${serviceName} — ${data.date}`,
     html: `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
