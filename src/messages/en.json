@@ -23,9 +23,7 @@
     "quickLinks": "Quick links",
     "ourServices": "Our services",
     "contactUs": "Contact us",
-    "allRightsReserved": "All rights reserved.",
-    "rutBadge": "RUT 50% tax deduction",
-    "guaranteeBadge": "7-day guarantee"
+    "allRightsReserved": "All rights reserved."
   },
   "trust": {
     "trustworthy": "Trustworthy",
@@ -37,15 +35,18 @@
     "rutInfo": "RUT tax deduction applies — save 50% on eligible services.",
     "guarantee": "7-day satisfaction guarantee on move-out cleaning."
   },
+  "trustBar": {
+    "p1": "Satisfaction guarantee",
+    "p2": "No missed appointments",
+    "p3": "Safe & secure",
+    "p4": "50% RUT deduction — applied directly"
+  },
   "home": {
     "title": "Härlig Städ AB",
     "subtitle": "Professional cleaning solutions for your home and business. Trustworthy, flexible, easy.",
     "hero": {
-      "title": "Welcome home to a freshly cleaned home.",
-      "subtitle": "Trustworthy. Flexible. Easy. Experience home cleaning as it should be.",
-      "rutBadge": "RUT 50% tax deduction",
-      "guaranteeBadge": "7-day guarantee",
-      "noPayment": "No payment required — we confirm by phone"
+      "title": "Professional cleaning, made simple",
+      "subtitle": "Request a free quote in about a minute — quality-focused service, on-time visits, and RUT handled for you."
     },
     "quickBooking": {
       "postalCodeLabel": "Postal code",
@@ -54,12 +55,6 @@
       "invalidPostalCode": "Enter a valid Swedish postal code (5 digits)"
     },
     "cta": "Get a Quote",
-    "statsCustomers": "500+",
-    "statsCustomersLabel": "Happy customers",
-    "statsYears": "30",
-    "statsYearsLabel": "Years experience",
-    "statsServices": "5",
-    "statsServicesLabel": "Professional services",
     "servicesTitle": "How can we help you?",
     "servicesSubtitle": "From home cleaning to office maintenance, we offer professional services tailored to your needs.",
     "howItWorksTitle": "Book in 3 simple steps",
@@ -88,11 +83,10 @@
       "squareMetersPlaceholder": "Square meters",
       "cityPlaceholder": "City",
       "phonePlaceholder": "Phone number",
-      "emailPlaceholder": "Email",
+      "emailPlaceholder": "Email *",
       "windowSectionTitle": "Window cleaning quote",
       "namePlaceholder": "Name *",
       "addressPlaceholder": "Address *",
-      "emailRequiredLabel": "Email *",
       "consent": "I consent to receive communication in accordance with the <policy>privacy policy</policy>.",
       "submit": "Calculate my price",
       "submitWindow": "Get quote!",
@@ -145,6 +139,9 @@
     "includesSectionBathroom": "Bathroom",
     "includesSectionLaundry": "Laundry & Utility Room",
     "includesSectionWindows": "Windows",
+    "windowBeforeAfterTitle": "Before and after",
+    "windowBeforeAfterDescription": "This is how dramatic the difference can be with professional window cleaning — glass that lets light in without grime and streaks.",
+    "windowBeforeAfterAlt": "Three windows: the left pane is dirty and the two right panes are clean, with before-and-after wording visible on the photo.",
     "homeCleaning": {
       "intro": "Do you long for more time for what really matters? Let Härlig Städ AB take care of the cleaning so you can focus on life. We create order and harmony with a personal touch – for a happier home.\n\nComing home to a freshly cleaned house is one of life's greatest everyday luxuries. The scent of freshly scrubbed floors, the gleaming surfaces in the bathroom, and the peace of mind that comes when you don't have to think about vacuuming and dishes. At Härlig Städ AB, we know that a clean home isn't just about hygiene – it's about well-being, harmony, and more quality time with family and friends.",
       "whyChooseUs": [
@@ -277,19 +274,23 @@
   },
   "about": {
     "title": "About Härlig Städ AB",
-    "intro": "For nearly 30 years, we have offered first-class home services. Every day, we leverage that experience to meet, and exceed, our customers' expectations.",
-    "storyTitle": "Our story",
-    "storyP1": "What started as a small family business has grown into one of the most trusted cleaning service providers in Sweden. Our passion for cleanliness and customer care drives everything we do.",
-    "storyP2": "We believe that a clean home or office isn't a luxury — it's a foundation for well-being. That's why we go above and beyond to deliver results that make you smile when you walk through the door.",
+    "intro": "At Härlig Städ AB we offer professional cleaning services with a focus on quality, thoroughness and customer satisfaction. We specialize in move-out cleaning and window cleaning, making sure every detail shines — whether you're leaving a home or want more daylight in your living space.",
+    "servicesHeading": "Alongside our specialist services, we also offer:",
+    "serviceItem1": "Home cleaning – for a clean, welcoming home every day",
+    "serviceItem2": "Office cleaning – for a fresh, productive workplace",
+    "serviceItem3": "Deep cleaning – when your home or premises need a thorough top-to-bottom clean",
+    "storyP1": "When you hire us, you can feel confident. We are fully insured, so both you and your home are in safe hands. We also offer an inspection guarantee on move-out cleaning — if anything is not approved at inspection, we will put it right at no extra cost.",
+    "storyP2": "We work efficiently and carefully, always with the customer in focus. Our goal is to exceed your expectations and make everyday life easier.",
+    "storyClosing": "Härlig Städ AB – a dependable choice for spotless results.",
     "whyChooseTitle": "Why choose us?",
-    "why1Title": "Nearly 30 years of experience",
-    "why1Desc": "Decades of expertise in home and office cleaning across Sweden.",
-    "why2Title": "RUT 50% tax deduction",
-    "why2Desc": "Save 50% on eligible services. We handle the application — no extra steps for you.",
-    "why3Title": "7-day satisfaction guarantee",
-    "why3Desc": "For move-out cleaning, if you're not happy, we'll come back and fix it at no extra cost.",
-    "why4Title": "Professional, trained staff",
-    "why4Desc": "Every team member is meticulously selected and trained to the highest standards.",
+    "why1Title": "Satisfaction guarantee",
+    "why1Desc": "We stand behind our work. If something isn't right, we'll put it right — so you can feel confident in the result.",
+    "why2Title": "No missed appointments",
+    "why2Desc": "We arrive when we say we will. Count on clear communication and appointments that start on time.",
+    "why3Title": "Safe & secure",
+    "why3Desc": "We're fully insured and work with carefully vetted staff — your peace of mind matters to us.",
+    "why4Title": "50% RUT deduction — applied directly",
+    "why4Desc": "Save on eligible services with the RUT deduction. We help with the admin so it's straightforward for you.",
     "ctaBannerTitle": "Ready to experience the difference?",
     "ctaBannerSubtitle": "Book your cleaning today — no payment required upfront.",
     "valuesTitle": "Our values",

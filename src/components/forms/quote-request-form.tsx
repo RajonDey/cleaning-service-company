@@ -14,7 +14,6 @@ import { SERVICE_FORM_OPTIONS } from "@/lib/booking-schema";
 import { WindowCleaningFieldsBlock } from "@/components/forms/window-cleaning-fields-block";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 
@@ -288,20 +287,14 @@ export function QuoteRequestForm({
         </div>
 
         <div>
-          <Label
-            htmlFor="quote-email"
-            className={cn(isGlass && "text-white/90")}
-          >
-            {t("emailRequiredLabel")}
-          </Label>
           <Input
             id="quote-email"
             type="email"
             autoComplete="email"
             placeholder={t("emailPlaceholder")}
+            aria-label={t("emailPlaceholder")}
             {...register("email")}
             className={cn(
-              "mt-2",
               errors.email && "border-error",
               isGlass && heroGlassField
             )}

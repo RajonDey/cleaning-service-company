@@ -24,6 +24,7 @@ import {
 } from "@/lib/services";
 import { buildMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/config/site";
+import { imageConfig } from "@/config/images";
 
 type Props = {
   params: Promise<{ slug: string; locale: string }>;
@@ -99,6 +100,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
   const isMoveOut = currentSlug === "move-out-cleaning";
   const isHome = currentSlug === "home-cleaning";
+  const isWindowCleaning = currentSlug === "window-cleaning";
   const hasSubSections = isMoveOut || isHome;
 
   const hasWhyChooseUs = tDetail.has(`${messageKey}.whyChooseUs`);
@@ -210,6 +212,28 @@ export default async function ServiceDetailPage({ params }: Props) {
                 <p key={i}>{paragraph}</p>
               ))}
             </div>
+
+            {isWindowCleaning && (
+              <div className="mb-10">
+                <h2 className="mb-2 font-heading text-xl font-semibold text-foreground md:text-2xl">
+                  {tDetail("windowBeforeAfterTitle")}
+                </h2>
+                <p className="mb-4 max-w-2xl text-sm leading-relaxed text-foreground-muted md:text-base">
+                  {tDetail("windowBeforeAfterDescription")}
+                </p>
+                <figure className="overflow-hidden rounded-card border border-border bg-background-muted shadow-card">
+                  <div className="relative aspect-[16/10] w-full md:aspect-[2/1]">
+                    <Image
+                      src={imageConfig.windowCleaningBeforeAfter}
+                      alt={tDetail("windowBeforeAfterAlt")}
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 768px) 100vw, 896px"
+                    />
+                  </div>
+                </figure>
+              </div>
+            )}
 
             {/* Why choose us */}
             {whyChooseUs.length > 0 && (

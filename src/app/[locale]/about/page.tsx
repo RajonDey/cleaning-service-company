@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { Shield, Sliders, Zap, Award, BadgeCheck, Users, Clock, ArrowRight } from "lucide-react";
+import { Shield, Sliders, Zap, BadgeCheck, Clock, ArrowRight, CheckCircle2, Percent } from "lucide-react";
 import { Section } from "@/components/layout/section";
 import { Container } from "@/components/layout/container";
 import { TrustBadge } from "@/components/sections/trust-badge";
@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function AboutPage() {
   const t = await getTranslations("about");
+  const tCommon = await getTranslations("common");
   const tTrust = await getTranslations("trust");
   const tFaq = await getTranslations("faq");
 
@@ -33,10 +34,10 @@ export default async function AboutPage() {
   ];
 
   const whyChoose = [
-    { icon: Clock, title: t("why1Title"), desc: t("why1Desc") },
-    { icon: Shield, title: t("why2Title"), desc: t("why2Desc") },
-    { icon: BadgeCheck, title: t("why3Title"), desc: t("why3Desc") },
-    { icon: Users, title: t("why4Title"), desc: t("why4Desc") },
+    { icon: BadgeCheck, title: t("why1Title"), desc: t("why1Desc") },
+    { icon: Clock, title: t("why2Title"), desc: t("why2Desc") },
+    { icon: Shield, title: t("why3Title"), desc: t("why3Desc") },
+    { icon: Percent, title: t("why4Title"), desc: t("why4Desc") },
   ];
 
   return (
@@ -57,20 +58,39 @@ export default async function AboutPage() {
             </div>
           </div>
 
-          {/* Story */}
-          <div className="mx-auto max-w-3xl space-y-6 text-center">
-            <h2 className="font-heading text-2xl font-bold text-foreground md:text-3xl">
-              {t("storyTitle")}
-            </h2>
-            <p className="text-lg leading-relaxed text-foreground-muted">
+          {/* About copy — article-style column, services in a highlighted panel */}
+          <div className="mx-auto max-w-2xl">
+            <p className="text-pretty text-xl font-medium leading-relaxed text-foreground md:text-2xl md:leading-snug">
               {t("intro")}
             </p>
-            <p className="text-lg leading-relaxed text-foreground-muted">
-              {t("storyP1")}
-            </p>
-            <p className="text-lg leading-relaxed text-foreground-muted">
-              {t("storyP2")}
-            </p>
+
+            <div className="mt-10 rounded-card border border-border bg-background-muted/90 p-6 shadow-card md:p-8">
+              <p className="font-heading text-lg font-semibold text-foreground">
+                {t("servicesHeading")}
+              </p>
+              <ul className="mt-5 space-y-4">
+                {[t("serviceItem1"), t("serviceItem2"), t("serviceItem3")].map((item) => (
+                  <li key={item} className="flex gap-3 text-pretty text-base leading-relaxed text-foreground md:text-lg">
+                    <CheckCircle2
+                      className="mt-0.5 h-5 w-5 shrink-0 text-primary"
+                      aria-hidden
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-10 space-y-5 text-pretty text-base leading-relaxed text-foreground-muted md:text-lg">
+              <p>{t("storyP1")}</p>
+              <p>{t("storyP2")}</p>
+            </div>
+
+            <div className="mt-10 rounded-r-xl border-l-4 border-primary bg-primary-light/35 py-4 pl-5 pr-4 md:py-5 md:pl-6 md:pr-6">
+              <p className="font-heading text-base font-semibold text-foreground md:text-lg">
+                {t("storyClosing")}
+              </p>
+            </div>
           </div>
         </Container>
       </Section>
@@ -79,9 +99,9 @@ export default async function AboutPage() {
       <Section title={t("whyChooseTitle")} className="bg-background-muted">
         <Container>
           <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2">
-            {whyChoose.map(({ icon: Icon, title, desc }, i) => (
+            {whyChoose.map(({ icon: Icon, title, desc }) => (
               <div
-                key={i}
+                key={title}
                 className="flex gap-4 rounded-card border border-border bg-background p-6 transition-shadow hover:shadow-card-hover"
               >
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary-light text-primary">
@@ -110,7 +130,7 @@ export default async function AboutPage() {
             <div className="mt-6">
               <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
                 <IntlLink href="/book">
-                  Book Now
+                  {tCommon("book")}
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </IntlLink>
               </Button>

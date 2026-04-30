@@ -4,6 +4,7 @@ import {
   Star, Phone, MessageCircle, Mail, ArrowRight,
 } from "lucide-react";
 import { QuickBookingHero } from "@/components/sections/quick-booking-hero";
+import { TrustBarStrip } from "@/components/sections/trust-bar-strip";
 import { ServiceCard } from "@/components/sections/service-card";
 import { TrustBadge } from "@/components/sections/trust-badge";
 import { Container } from "@/components/layout/container";
@@ -42,27 +43,12 @@ export default async function HomePage() {
       <QuickBookingHero
         title={t("hero.title")}
         subtitle={t("hero.subtitle")}
-        rutBadge={t("hero.rutBadge")}
-        guaranteeBadge={t("hero.guaranteeBadge")}
       />
 
-      {/* Stats bar */}
-      <div className="border-b border-border bg-background py-8">
+      {/* Trust highlights */}
+      <div className="border-b border-border bg-background py-8 md:py-10">
         <Container>
-          <div className="grid grid-cols-3 divide-x divide-border text-center">
-            {[
-              { value: t("statsCustomers"), label: t("statsCustomersLabel") },
-              { value: t("statsYears"), label: t("statsYearsLabel") },
-              { value: t("statsServices"), label: t("statsServicesLabel") },
-            ].map(({ value, label }) => (
-              <div key={label} className="px-4">
-                <p className="font-heading text-2xl font-bold text-primary md:text-3xl">
-                  {value}
-                </p>
-                <p className="mt-1 text-sm text-foreground-muted">{label}</p>
-              </div>
-            ))}
-          </div>
+          <TrustBarStrip />
         </Container>
       </div>
 

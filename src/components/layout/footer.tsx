@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Phone, Mail, MessageCircle, MapPin, Shield, BadgeCheck } from "lucide-react";
+import { Phone, Mail, MessageCircle, MapPin } from "lucide-react";
 import { Link as IntlLink } from "@/i18n/routing";
 import { Container } from "@/components/layout/container";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import { imageConfig } from "@/config/images";
 import { SERVICE_CONFIG, SERVICE_SLUGS, getServiceHref } from "@/lib/services";
+import { TrustBarStrip } from "@/components/sections/trust-bar-strip";
 
 const navLinks = [
   { href: "/", key: "home" },
@@ -29,9 +30,9 @@ export function Footer({ className }: { className?: string }) {
       )}
     >
       <Container>
-        <div className="grid gap-10 sm:grid-cols-2 md:gap-12 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 md:gap-12 lg:grid-cols-4 lg:items-start">
           {/* Brand */}
-          <div className="space-y-4">
+          <div className="min-w-0 space-y-4 text-left">
             <IntlLink
               href="/"
               className="inline-flex rounded-2xl bg-white p-2.5 shadow-md ring-1 ring-white/20 transition-opacity hover:opacity-95"
@@ -46,19 +47,12 @@ export function Footer({ className }: { className?: string }) {
               />
               <span className="sr-only">{siteConfig.siteName}</span>
             </IntlLink>
-            <p className="text-sm leading-relaxed">
+            <p className="max-w-md text-sm leading-relaxed text-white/80">
               {tFooter("tagline")}
             </p>
 
-            <div className="flex flex-wrap gap-3 pt-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white">
-                <Shield className="h-3.5 w-3.5" />
-                {tFooter("rutBadge")}
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white">
-                <BadgeCheck className="h-3.5 w-3.5" />
-                {tFooter("guaranteeBadge")}
-              </span>
+            <div className="border-t border-white/10 pt-4">
+              <TrustBarStrip variant="dark" />
             </div>
           </div>
 

@@ -23,9 +23,7 @@
     "quickLinks": "Snabblänkar",
     "ourServices": "Våra tjänster",
     "contactUs": "Kontakta oss",
-    "allRightsReserved": "Alla rättigheter förbehållna.",
-    "rutBadge": "RUT 50% skatteavdrag",
-    "guaranteeBadge": "7 dagars garanti"
+    "allRightsReserved": "Alla rättigheter förbehållna."
   },
   "trust": {
     "trustworthy": "Pålitligt",
@@ -37,15 +35,18 @@
     "rutInfo": "RUT-avdrag gäller — spara 50% på berättigade tjänster.",
     "guarantee": "7 dagars nöjd-garanti på flyttstädning."
   },
+  "trustBar": {
+    "p1": "Nöjdkundgaranti",
+    "p2": "Inga missade tider",
+    "p3": "Tryggt & säkert",
+    "p4": "50 % RUT-avdrag direkt"
+  },
   "home": {
     "title": "Härlig Städ AB",
     "subtitle": "Professionella städtjänster för hem och företag. Pålitligt, flexibelt, enkelt.",
     "hero": {
-      "title": "Välkommen hem till ett fräscht städat hem.",
-      "subtitle": "Pålitligt. Flexibelt. Enkelt. Upplev hemstädning som den ska vara.",
-      "rutBadge": "RUT 50% skatteavdrag",
-      "guaranteeBadge": "7 dagars garanti",
-      "noPayment": "Ingen betalning krävs — vi bekräftar per telefon"
+      "title": "Professionell städning – enkelt och tryggt",
+      "subtitle": "Få en kostnadsfri offert på under en minut. Vi sätter kvalitet, punktlighet och nöjdkundgaranti i första rummet."
     },
     "quickBooking": {
       "postalCodeLabel": "Postnummer",
@@ -54,12 +55,6 @@
       "invalidPostalCode": "Ange ett giltigt svenskt postnummer (5 siffror)"
     },
     "cta": "Få en offert",
-    "statsCustomers": "500+",
-    "statsCustomersLabel": "Nöjda kunder",
-    "statsYears": "30",
-    "statsYearsLabel": "Års erfarenhet",
-    "statsServices": "5",
-    "statsServicesLabel": "Professionella tjänster",
     "servicesTitle": "Hur kan vi hjälpa dig?",
     "servicesSubtitle": "Från hemstädning till kontorsunderhåll — professionella tjänster anpassade efter dina behov.",
     "howItWorksTitle": "Boka i 3 enkla steg",
@@ -88,11 +83,10 @@
       "squareMetersPlaceholder": "Antal kvadratmeter",
       "cityPlaceholder": "Ort",
       "phonePlaceholder": "Telefonnummer",
-      "emailPlaceholder": "E-post",
+      "emailPlaceholder": "E-post *",
       "windowSectionTitle": "Offert fönsterputs",
       "namePlaceholder": "Namn *",
       "addressPlaceholder": "Adress *",
-      "emailRequiredLabel": "E-post *",
       "consent": "Jag samtycker till att motta kommunikation i enlighet med <policy>integritetspolicyn</policy>.",
       "submit": "Beräkna mitt pris",
       "submitWindow": "Få offert!",
@@ -145,6 +139,9 @@
     "includesSectionBathroom": "Badrum",
     "includesSectionLaundry": "Tvättstuga",
     "includesSectionWindows": "Fönster",
+    "windowBeforeAfterTitle": "Före och efter",
+    "windowBeforeAfterDescription": "Så här tydlig kan skillnaden bli med professionell fönsterputs — glas som släpper in ljus utan smuts och ränder.",
+    "windowBeforeAfterAlt": "Tre fönster där det vänstra är smutsigt och de två högra är rena, med texten före och efter på bilden.",
     "homeCleaning": {
       "intro": "Längtar du efter mer tid till det som verkligen betyder något? Låt Härlig Städ AB ta hand om städningen, så kan du fokusera på livet. Vi skapar ordning och reda med en personlig touch – för ett lyckligare hem.\n\nAtt komma hem till ett nystädat hus är en av vardagens största lyxmoment. Doften av nyskurat golv, de spegelblanka ytorna i badrummet och lugnet som infinner sig när du slipper tänka på dammsugning och disk. På Härlig Städ AB vet vi att ett rent hem inte bara handlar om hygien – det handlar om välmående, harmoni och mer kvalitetstid med familj och vänner.",
       "whyChooseUs": [
@@ -277,19 +274,23 @@
   },
   "about": {
     "title": "Om Härlig Städ AB",
-    "intro": "I nästan 30 år har vi erbjudit förstklassiga hemtjänster. Varje dag använder vi den erfarenheten för att möta och överträffa våra kunders förväntningar.",
-    "storyTitle": "Vår historia",
-    "storyP1": "Det som började som ett litet familjeföretag har vuxit till en av Sveriges mest pålitliga städtjänstleverantörer. Vår passion för renlighet och kundvård driver allt vi gör.",
-    "storyP2": "Vi tror att ett rent hem eller kontor inte är en lyx — det är en grund för välmående. Därför går vi utöver det vanliga för att leverera resultat som får dig att le när du kliver in genom dörren.",
+    "intro": "På Härlig Städ AB erbjuder vi professionella städtjänster med fokus på kvalitet, noggrannhet och kundnöjdhet. Vi är specialiserade på flyttstädning och fönsterputsning, där vi säkerställer att varje detalj blir skinande ren – oavsett om du lämnar en bostad eller vill få in mer ljus i ditt hem.",
+    "servicesHeading": "Utöver våra specialisttjänster erbjuder vi även:",
+    "serviceItem1": "Hemstädning – för ett rent och trivsamt hem i vardagen",
+    "serviceItem2": "Kontorsstädning – för en fräsch och produktiv arbetsmiljö",
+    "serviceItem3": "Storstädning – när ditt hem eller din lokal behöver en ordentlig genomgång",
+    "storyP1": "När du anlitar oss kan du känna dig trygg. Vi är fullt försäkrade, vilket innebär att både du och ditt hem är i säkra händer. Dessutom erbjuder vi besiktningsgaranti på våra flyttstädningar – skulle något inte godkännas vid besiktning åtgärdar vi det utan extra kostnad.",
+    "storyP2": "Vi arbetar effektivt, noggrant och alltid med kunden i fokus. Vårt mål är att överträffa dina förväntningar och göra din vardag enklare.",
+    "storyClosing": "Härlig Städ AB – Ett tryggt val för skinande resultat.",
     "whyChooseTitle": "Varför välja oss?",
-    "why1Title": "Nästan 30 års erfarenhet",
-    "why1Desc": "Decennier av expertis inom hem- och kontorsstädning i hela Sverige.",
-    "why2Title": "RUT 50% skatteavdrag",
-    "why2Desc": "Spara 50% på berättigade tjänster. Vi hanterar ansökan — inga extra steg för dig.",
-    "why3Title": "7 dagars nöjd-garanti",
-    "why3Desc": "För flyttstädning — om du inte är nöjd kommer vi tillbaka utan extra kostnad.",
-    "why4Title": "Professionell, utbildad personal",
-    "why4Desc": "Varje teammedlem är noggrant utvald och utbildad efter högsta standard.",
+    "why1Title": "Nöjdkundgaranti",
+    "why1Desc": "Vi står bakom vårt arbete. Skulle något inte kännas rätt åtgärdar vi det — så att du känner dig trygg med resultatet.",
+    "why2Title": "Inga missade tider",
+    "why2Desc": "Vi kommer när vi lovar. Du kan lita på tydlig kommunikation och att vi håller överenskomna tider.",
+    "why3Title": "Tryggt & säkert",
+    "why3Desc": "Vi är fullt försäkrade och arbetar med noggrant utvald personal — din trygghet ligger oss varmt om hjärtat.",
+    "why4Title": "50 % RUT-avdrag direkt",
+    "why4Desc": "Spara på berättigade tjänster med RUT-avdrag. Vi hjälper dig med administrationen så det blir enkelt för dig.",
     "ctaBannerTitle": "Redo att uppleva skillnaden?",
     "ctaBannerSubtitle": "Boka din städning idag — ingen betalning krävs i förväg.",
     "valuesTitle": "Våra värderingar",

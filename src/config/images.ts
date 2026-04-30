@@ -29,4 +29,9 @@ export const imageConfig = {
 
   /** About page hero — wide ratio; reuses banner for consistent branding */
   about: "/images/banner.jpeg",
+
+  /**
+   * Window cleaning service page — customer before/after (FÖRE/EFTER on asset).
+   */
+  windowCleaningBeforeAfter: "/images/before-after.jpeg",
 } as const;
