@@ -8,7 +8,7 @@ export const siteConfig = {
   siteName: "Härlig Städ AB",
 
   /** Base URL for canonical links and Open Graph (no trailing slash) */
-  baseUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://homecleaningservice.se",
+  baseUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.harligstad.se",
 
   /** Default meta when page-specific values are not set */
   defaultTitle: "Härlig Städ AB | Professional Cleaning Services",
